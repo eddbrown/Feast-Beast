@@ -1,2 +1,9 @@
-No feasts yet!
-<a href='#'>Add a feast</a>
+<% if @feasts.any? %>
+  <% @feasts.each do |feast| %>
+    <h2><%= feast.name %></h2>
+  <% end %>
+<% else %>
+  <h1>No feasts yet</h1>
+<% end %>
+
+<a href='feasts/new'>Add a feast</a>
