@@ -1377,3 +1377,1339 @@ Processing by FeastsController#show as HTML
   Rendered feasts/show.html.erb within layouts/application (0.7ms)
 Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:22:21 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 62ms (Views: 50.5ms | ActiveRecord: 2.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Sushi"], ["created_at", "2015-04-07 13:22:21.549943"], ["updated_at", "2015-04-07 13:22:21.549943"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:22:21 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:22:21 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 14:22:21 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 14:22:21 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Sushi"], ["created_at", "2015-04-07 13:22:21.624509"], ["updated_at", "2015-04-07 13:22:21.624509"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:22:21 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Shawarma"], ["created_at", "2015-04-07 13:22:21.641043"], ["updated_at", "2015-04-07 13:22:21.641043"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:22:21 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.4ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.7ms)
+Started GET "/feasts/3" for 127.0.0.1 at 2015-04-07 14:22:21 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mFeast Load (0.3ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered feasts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:23:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 23ms (Views: 14.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 13:23:14.284323"], ["updated_at", "2015-04-07 13:23:14.284323"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:23:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:23:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 14:23:14 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 14:23:14 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 13:23:14.361642"], ["updated_at", "2015-04-07 13:23:14.361642"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:23:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 13:23:14.371855"], ["updated_at", "2015-04-07 13:23:14.371855"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:23:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+Started GET "/feasts/6" for 127.0.0.1 at 2015-04-07 14:23:14 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 6]]
+  Rendered feasts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:24:08 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 13.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 13:24:08.837184"], ["updated_at", "2015-04-07 13:24:08.837184"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:24:08 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:24:08 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 14:24:08 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 14:24:08 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 13:24:08.912217"], ["updated_at", "2015-04-07 13:24:08.912217"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:24:08 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 13:24:08.921572"], ["updated_at", "2015-04-07 13:24:08.921572"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:24:08 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.3ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.8ms)
+Started GET "/feasts/9" for 127.0.0.1 at 2015-04-07 14:24:08 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 9]]
+  Rendered feasts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:25:07 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 24ms (Views: 14.3ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 13:25:07.756237"], ["updated_at", "2015-04-07 13:25:07.756237"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:25:07 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:25:07 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 14:25:07 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 14:25:07 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 13:25:07.825236"], ["updated_at", "2015-04-07 13:25:07.825236"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:25:07 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 13:25:07.837078"], ["updated_at", "2015-04-07 13:25:07.837078"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:25:07 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (1.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 3.6ms)
+Started GET "/feasts/12" for 127.0.0.1 at 2015-04-07 14:25:07 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered feasts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 16ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 23ms (Views: 14.1ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 13:33:56.162855"], ["updated_at", "2015-04-07 13:33:56.162855"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.4ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 13:33:56.241309"], ["updated_at", "2015-04-07 13:33:56.241309"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 13:33:56.251563"], ["updated_at", "2015-04-07 13:33:56.251563"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+Started GET "/feasts/15" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mFeast Load (0.6ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 15]]
+  Rendered feasts/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 10ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 13:33:56.273610"], ["updated_at", "2015-04-07 13:33:56.273610"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 14:33:56 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 43ms (Views: 30.3ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:03:14.143869"], ["updated_at", "2015-04-07 14:03:14.143869"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.3ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 17ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:03:14.231247"], ["updated_at", "2015-04-07 14:03:14.231247"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:03:14.244399"], ["updated_at", "2015-04-07 14:03:14.244399"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/19" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[35mFeast Load (0.3ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 19]]
+  Rendered feasts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 15ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:03:14.270927"], ["updated_at", "2015-04-07 14:03:14.270927"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/20/edit" for 127.0.0.1 at 2015-04-07 15:03:14 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 24ms (Views: 14.6ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:03:50.114509"], ["updated_at", "2015-04-07 14:03:50.114509"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:03:50.195813"], ["updated_at", "2015-04-07 14:03:50.195813"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.4ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:03:50.210643"], ["updated_at", "2015-04-07 14:03:50.210643"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+Started GET "/feasts/23" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 23]]
+  Rendered feasts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 7ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:03:50.227964"], ["updated_at", "2015-04-07 14:03:50.227964"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+Started GET "/feasts/24/edit" for 127.0.0.1 at 2015-04-07 15:03:50 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"24"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 25ms (Views: 15.3ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:04:24.758731"], ["updated_at", "2015-04-07 14:04:24.758731"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:04:24.840661"], ["updated_at", "2015-04-07 14:04:24.840661"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.6ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:04:24.853455"], ["updated_at", "2015-04-07 14:04:24.853455"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+Started GET "/feasts/27" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"27"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 27]]
+  Rendered feasts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:04:24.873309"], ["updated_at", "2015-04-07 14:04:24.873309"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/28/edit" for 127.0.0.1 at 2015-04-07 15:04:24 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"28"}
+  Rendered feasts/edit.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 45ms (Views: 34.8ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:07:09.315648"], ["updated_at", "2015-04-07 14:07:09.315648"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 18ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:07:09.400173"], ["updated_at", "2015-04-07 14:07:09.400173"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:07:09.410949"], ["updated_at", "2015-04-07 14:07:09.410949"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+Started GET "/feasts/31" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 31]]
+  Rendered feasts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:07:09.432067"], ["updated_at", "2015-04-07 14:07:09.432067"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+Started GET "/feasts/32/edit" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mFeast Load (0.4ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 32]]
+  Rendered feasts/edit.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.4ms)
+Started PATCH "/feasts/32" for 127.0.0.1 at 2015-04-07 15:07:09 +0100
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 14.2ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:07:46.609471"], ["updated_at", "2015-04-07 14:07:46.609471"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 12ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:07:46.687957"], ["updated_at", "2015-04-07 14:07:46.687957"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:07:46.697698"], ["updated_at", "2015-04-07 14:07:46.697698"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.5ms)
+Started GET "/feasts/35" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 35]]
+  Rendered feasts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:07:46.721233"], ["updated_at", "2015-04-07 14:07:46.721233"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/36/edit" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mFeast Load (0.3ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 36]]
+  Rendered feasts/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+Started PATCH "/feasts/36" for 127.0.0.1 at 2015-04-07 15:07:46 +0100
+Processing by FeastsController#update as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Burger Joint"}, "commit"=>"Update Feast", "id"=>"36"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 28ms (Views: 17.3ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:09:36.679902"], ["updated_at", "2015-04-07 14:09:36.679902"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 16ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:09:36.763717"], ["updated_at", "2015-04-07 14:09:36.763717"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:09:36.776194"], ["updated_at", "2015-04-07 14:09:36.776194"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+Started GET "/feasts/39" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 39]]
+  Rendered feasts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 2.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:09:36.795650"], ["updated_at", "2015-04-07 14:09:36.795650"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+Started GET "/feasts/40/edit" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"40"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 40]]
+  Rendered feasts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started PATCH "/feasts/40" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#update as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Burger Joint"}, "commit"=>"Update Feast", "id"=>"40"}
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 40]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "feasts" SET "name" = $1, "updated_at" = $2 WHERE "feasts"."id" = $3[0m  [["name", "Burger Joint"], ["updated_at", "2015-04-07 14:09:36.811423"], ["id", 40]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 8ms (ActiveRecord: 1.1ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:09:36 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 37ms (Views: 26.6ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:18:09.158513"], ["updated_at", "2015-04-07 14:18:09.158513"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:18:09.202756"], ["updated_at", "2015-04-07 14:18:09.202756"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:18:09.213239"], ["updated_at", "2015-04-07 14:18:09.213239"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/43" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"43"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 43]]
+  Rendered feasts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 1.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:18:09.234218"], ["updated_at", "2015-04-07 14:18:09.234218"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/44/edit" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"44"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 44]]
+  Rendered feasts/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+Started PATCH "/feasts/44" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#update as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Burger Joint"}, "commit"=>"Update Feast", "id"=>"44"}
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 44]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "feasts" SET "name" = $1, "updated_at" = $2 WHERE "feasts"."id" = $3[0m  [["name", "Burger Joint"], ["updated_at", "2015-04-07 14:18:09.253587"], ["id", 44]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:18:09.263442"], ["updated_at", "2015-04-07 14:18:09.263442"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:18:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 41ms (Views: 31.3ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:28:16.551091"], ["updated_at", "2015-04-07 14:28:16.551091"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.3ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:28:16.595710"], ["updated_at", "2015-04-07 14:28:16.595710"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:28:16.606031"], ["updated_at", "2015-04-07 14:28:16.606031"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+Started GET "/feasts/48" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 48]]
+  Rendered feasts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 9ms (Views: 2.2ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:28:16.629596"], ["updated_at", "2015-04-07 14:28:16.629596"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.5ms)
+Started GET "/feasts/49/edit" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mFeast Load (0.3ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 49]]
+  Rendered feasts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+Started PATCH "/feasts/49" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#update as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Burger Joint"}, "commit"=>"Update Feast", "id"=>"49"}
+  [1m[36mFeast Load (0.3ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 49]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "feasts" SET "name" = $1, "updated_at" = $2 WHERE "feasts"."id" = $3[0m  [["name", "Burger Joint"], ["updated_at", "2015-04-07 14:28:16.649480"], ["id", 49]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:28:16.660750"], ["updated_at", "2015-04-07 14:28:16.660750"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:16 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 25ms (Views: 15.6ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:28:30.090126"], ["updated_at", "2015-04-07 14:28:30.090126"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 15ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:28:30.129934"], ["updated_at", "2015-04-07 14:28:30.129934"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:28:30.141036"], ["updated_at", "2015-04-07 14:28:30.141036"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+Started GET "/feasts/53" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"53"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 53]]
+  Rendered feasts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:28:30.161494"], ["updated_at", "2015-04-07 14:28:30.161494"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+Started GET "/feasts/54/edit" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"54"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 54]]
+  Rendered feasts/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started PATCH "/feasts/54" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#update as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Burger Joint"}, "commit"=>"Update Feast", "id"=>"54"}
+  [1m[36mFeast Load (0.3ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 54]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "feasts" SET "name" = $1, "updated_at" = $2 WHERE "feasts"."id" = $3[0m  [["name", "Burger Joint"], ["updated_at", "2015-04-07 14:28:30.178916"], ["id", 54]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:28:30.190283"], ["updated_at", "2015-04-07 14:28:30.190283"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.8ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 1.2ms)
+Started DELETE "/feasts/55" for 127.0.0.1 at 2015-04-07 15:28:30 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 25ms (Views: 14.2ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:29:09.142923"], ["updated_at", "2015-04-07 14:29:09.142923"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.3ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:29:09.177408"], ["updated_at", "2015-04-07 14:29:09.177408"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:29:09.186856"], ["updated_at", "2015-04-07 14:29:09.186856"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+Started GET "/feasts/58" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"58"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 58]]
+  Rendered feasts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 9ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:29:09.210501"], ["updated_at", "2015-04-07 14:29:09.210501"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/59/edit" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"59"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 59]]
+  Rendered feasts/edit.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+Started PATCH "/feasts/59" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#update as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Burger Joint"}, "commit"=>"Update Feast", "id"=>"59"}
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 59]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "feasts" SET "name" = $1, "updated_at" = $2 WHERE "feasts"."id" = $3[0m  [["name", "Burger Joint"], ["updated_at", "2015-04-07 14:29:09.227498"], ["id", 59]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:29:09.236330"], ["updated_at", "2015-04-07 14:29:09.236330"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+Started DELETE "/feasts/60" for 127.0.0.1 at 2015-04-07 15:29:09 +0100
+Processing by FeastsController#destroy as HTML
+  Parameters: {"id"=>"60"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 35ms (Views: 24.6ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:33:23.816460"], ["updated_at", "2015-04-07 14:33:23.816460"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/new" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#new as HTML
+  Rendered feasts/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+Started POST "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Sushi"}, "commit"=>"Create Feast"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sushi"], ["created_at", "2015-04-07 14:33:23.855747"], ["updated_at", "2015-04-07 14:33:23.855747"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:33:23.866263"], ["updated_at", "2015-04-07 14:33:23.866263"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/63" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#show as HTML
+  Parameters: {"id"=>"63"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 63]]
+  Rendered feasts/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:33:23.884845"], ["updated_at", "2015-04-07 14:33:23.884845"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+Started GET "/feasts/64/edit" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#edit as HTML
+  Parameters: {"id"=>"64"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 64]]
+  Rendered feasts/edit.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms)
+Started PATCH "/feasts/64" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#update as HTML
+  Parameters: {"utf8"=>"✓", "feast"=>{"name"=>"Burger Joint"}, "commit"=>"Update Feast", "id"=>"64"}
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 64]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "feasts" SET "name" = $1, "updated_at" = $2 WHERE "feasts"."id" = $3[0m  [["name", "Burger Joint"], ["updated_at", "2015-04-07 14:33:23.903151"], ["id", 64]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.1ms)[0m  SELECT "feasts".* FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Shawarma"], ["created_at", "2015-04-07 14:33:23.913204"], ["updated_at", "2015-04-07 14:33:23.913204"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.1ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  Rendered feasts/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+Started DELETE "/feasts/65" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#destroy as HTML
+  Parameters: {"id"=>"65"}
+  [1m[35mFeast Load (0.2ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 65]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "feasts" WHERE "feasts"."id" = $1  [["id", 65]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/feasts
+Completed 302 Found in 2ms (ActiveRecord: 0.5ms)
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 15:33:23 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "feasts"
+  Rendered feasts/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

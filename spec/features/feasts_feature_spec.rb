@@ -38,15 +38,37 @@ feature 'feasts' do
     let!(:shawarma){Feast.create(name:'Shawarma')}
 
     scenario 'user clicks link and is directed to feast page' do
-
       visit '/feasts'
       click_link shawarma.name
       expect(page).to have_content shawarma.name
       expect(current_path).to eq "/feasts/#{shawarma.id}"
-
     end
+  end
 
+  context 'updating feasts' do
 
+    let!(:shawarma){Feast.create(name:'Shawarma')}
+
+    scenario 'user can edit feast profile' do
+      visit '/feasts'
+      click_link "Edit #{shawarma.name}"
+      fill_in 'Name', with: 'Burger Joint'
+      click_button 'Update Feast'
+      expect(page).to have_content 'Burger Joint'
+      expect(current_path).to eq '/feasts'
+    end
+  end
+
+  context 'deleting feasts' do
+
+    let!(:shawarma){Feast.create(name:'Shawarma')}
+
+    scenario 'removes a feast when a user clicks delete link' do
+      visit '/feasts'
+      click_link "Delete #{shawarma.name}"
+      expect(page).not_to have_content shawarma.name
+      expect(page).to have_content 'Feast deleted successfully'
+    end
   end
 
 end

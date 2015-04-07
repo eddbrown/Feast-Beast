@@ -17,6 +17,25 @@ class FeastsController < ApplicationController
   end
 
   def show
-    
+    @feast = Feast.find(params[:id])
+  end
+
+  def edit
+    @feast = Feast.find(params[:id])
+  end
+
+  def update
+    @feast = Feast.find(params[:id])
+    @feast.update(feast_params)
+
+    redirect_to '/feasts'
+  end
+
+  def destroy
+    @feast = Feast.find(params[:id])
+    @feast.destroy
+    flash[:notice] = 'Feast deleted successfully'
+    redirect_to '/feasts'
   end
 end
+
