@@ -1,0 +1,62 @@
+  [1m[36m (267.0ms)[0m  [1mCREATE DATABASE "street-feast_test" ENCODING = 'unicode'[0m
+  [1m[36m (125.3ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (256.6ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:07:40 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (124.3ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (249.7ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:09:35 +0100
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (117.2ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (249.4ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:11:22 +0100
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (124.0ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (256.1ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:12:22 +0100
+Processing by FeastsController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (133.3ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (248.9ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:13:24 +0100
+Processing by FeastsController#index as HTML
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (124.6ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (246.4ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:14:14 +0100
+Processing by FeastsController#index as HTML
+  Rendered feasts/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1296ms (Views: 1288.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (124.5ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (248.1ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:14:43 +0100
+Processing by FeastsController#index as HTML
+  Rendered feasts/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (123.8ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (247.9ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:15:04 +0100
+Processing by FeastsController#index as HTML
+  Rendered feasts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (125.0ms)[0m  [1mDROP DATABASE IF EXISTS "street-feast_test"[0m
+  [1m[35m (250.0ms)[0m  CREATE DATABASE "street-feast_test" ENCODING = 'unicode'
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Started GET "/feasts" for 127.0.0.1 at 2015-04-07 12:15:29 +0100
+Processing by FeastsController#index as HTML
+  Rendered feasts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 22ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
