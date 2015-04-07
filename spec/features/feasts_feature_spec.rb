@@ -33,4 +33,20 @@ feature 'feasts' do
     end
   end
 
+  context 'viewing feast page' do
+
+    let!(:shawarma){Feast.create(name:'Shawarma')}
+
+    scenario 'user clicks link and is directed to feast page' do
+
+      visit '/feasts'
+      click_link shawarma.name
+      expect(page).to have_content shawarma.name
+      expect(current_path).to eq "/feasts/#{shawarma.id}"
+
+    end
+
+
+  end
+
 end
