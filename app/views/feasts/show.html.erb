@@ -1,0 +1,12 @@
+<p><%= @feast.name %></p>
+<p><%= @feast.description %></p>
+
+<% if @feast.reviews.any? %>
+<ul>
+  <% @feast.reviews.each do |review| %>
+    <li><%= review.thoughts %>, <strong><%= review.rating %></strong>/5</li>
+  <% end %>
+</ul>
+<% else %>
+  <p>No Reviews.</p>
+<% end %>
