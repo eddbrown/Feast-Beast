@@ -1,10 +1,11 @@
 require 'rails_helper'
+require_relative 'helpers.rb'
 
 feature 'reviewing' do
-  let!(:kebab){Feast.create(name: 'Kebabs')}
+  let!(:kebab){Feast.create(name: 'Kebabs', description: 'OK', address: 'London')}
 
   scenario 'allows users to write a review' do
-    visit '/feasts'
+    sign_up
     click_link "Review #{kebab.name}"
     fill_in 'Thoughts', with: 'solid'
     select '5', from: 'Rating'
@@ -14,7 +15,7 @@ feature 'reviewing' do
   end
 
   scenario 'deletes reviews of a deleted feast' do
-    visit '/feasts'
+    sign_up
     click_link 'Review Kebabs'
     fill_in "Thoughts", with: "so so"
     select '3', from: 'Rating'

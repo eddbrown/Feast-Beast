@@ -1,10 +1,11 @@
 require 'rails_helper'
+require_relative 'helpers.rb'
 
 feature 'feasts' do
 
   context 'no feasts have been added' do
     scenario 'should display a prompt to add a feast' do
-      visit '/feasts'
+      sign_up
       expect(page).to have_content 'No feasts yet'
       expect(page).to have_link 'Add a feast'
     end
@@ -12,7 +13,7 @@ feature 'feasts' do
 
   context 'feasts have been added' do
     before do
-      Feast.create(name: 'Sushi')
+      Feast.create(name: 'Sushi', description: 'OK', address: 'London')
     end
 
     scenario 'display feasts' do
@@ -24,7 +25,7 @@ feature 'feasts' do
 
   context 'creating feasts' do
     scenario 'prompts user to fill out a form, then displays the new feast' do
-      visit '/feasts'
+      sign_up
       click_link 'Add a feast'
       fill_in 'Name', with: 'Sushi'
       click_button 'Create Feast'
@@ -35,7 +36,7 @@ feature 'feasts' do
 
   context 'viewing feast page' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma')}
+    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
 
     scenario 'user clicks link and is directed to feast page' do
       visit '/feasts'
@@ -47,10 +48,10 @@ feature 'feasts' do
 
   context 'updating feasts' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma')}
+    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
 
     scenario 'user can edit feast profile' do
-      visit '/feasts'
+      sign_up
       click_link "Edit #{shawarma.name}"
       fill_in 'Name', with: 'Burger Joint'
       click_button 'Update Feast'
@@ -61,10 +62,10 @@ feature 'feasts' do
 
   context 'deleting feasts' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma')}
+    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
 
     scenario 'removes a feast when a user clicks delete link' do
-      visit '/feasts'
+      sign_up
       click_link "Delete #{shawarma.name}"
       expect(page).not_to have_content shawarma.name
       expect(page).to have_content 'Feast deleted successfully'

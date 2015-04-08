@@ -21,7 +21,9 @@
   <h1>No feasts yet</h1>
 <% end %>
 
-<a href='feasts/new'>Add a feast</a>
+<% if user_signed_in? %>
+  <a href='feasts/new'>Add a feast</a>
+<% end %>
 
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
@@ -45,6 +47,7 @@ handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   heatmap.setMap(map);
 });
 
-
-
 </script>
+
+
+
