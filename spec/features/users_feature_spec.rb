@@ -7,7 +7,7 @@ context "user not signed in and on the homepage" do
     expect(page).to have_link('Sign up')
   end
 
-  xit "should not see 'sign out' link" do
+  it "should not see 'sign out' link" do
     visit('/')
     expect(page).not_to have_link('Sign out')
   end
@@ -24,12 +24,12 @@ context "user signed in on the homepage" do
     click_button('Sign up')
   end
 
-  xit "should see 'sign out' link" do
+  it "should see 'sign out' link" do
     visit('/')
     expect(page).to have_link('Sign out')
   end
 
-  xit "should not see a 'sign in' link and a 'sign up' link" do
+  it "should not see a 'sign in' link and a 'sign up' link" do
     visit('/')
     expect(page).not_to have_link('Sign in')
     expect(page).not_to have_link('Sign up')
