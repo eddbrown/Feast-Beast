@@ -3660,3 +3660,1110 @@ Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 
 
 
 Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 13:26:48 +0100
+
+
+Started GET "/" for ::1 at 2015-04-08 13:29:20 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FeastsController#index as HTML
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.3ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  [1m[35mReview Exists (1.0ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1  [["feast_id", 1]]
+  Rendered feasts/index.html.erb within layouts/application (77.9ms)
+Completed 200 OK in 261ms (Views: 236.8ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:29:20 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 13:29:20 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 13:29:20 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 13:29:20 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:29:20 +0100
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-08 13:29:22 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 123ms (Views: 101.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 13:29:24 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 13:29:24 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCVW7NVsdvR756NghLa4w-LsQst-BYqOOiH1jIpGzJH1oH0P8ry69fdL6mKE7AWuFhA4o3hPp8ggc6hQ0bQc7iUdC6OTb995ip4wlz86zE3NoCAw0nLRDGiRwKADtVKw-EzjUFzuYBss1YWktdzCk9zwkpph1xIxziQQragXIE-bRlEtrpXGyWW9RZ9tHaK0-OAP1osUAiCbeIY6uSo8V3NrXee8Wd-ksstcf1dsypGfELevdd3SMYnbVcnV9oynNmCk4brXNp02eCHx_DHrwjqQ14EJYuxdvSF_bvM08T6zdvgvYBYYv3szzAgT6boV-8&state=4e4f63414c0067f0c8f8c49f24b9a4a411fae2bae47504c2" for ::1 at 2015-04-08 13:29:24 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCVW7NVsdvR756NghLa4w-LsQst-BYqOOiH1jIpGzJH1oH0P8ry69fdL6mKE7AWuFhA4o3hPp8ggc6hQ0bQc7iUdC6OTb995ip4wlz86zE3NoCAw0nLRDGiRwKADtVKw-EzjUFzuYBss1YWktdzCk9zwkpph1xIxziQQragXIE-bRlEtrpXGyWW9RZ9tHaK0-OAP1osUAiCbeIY6uSo8V3NrXee8Wd-ksstcf1dsypGfELevdd3SMYnbVcnV9oynNmCk4brXNp02eCHx_DHrwjqQ14EJYuxdvSF_bvM08T6zdvgvYBYYv3szzAgT6boV-8", "state"=>"4e4f63414c0067f0c8f8c49f24b9a4a411fae2bae47504c2"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 102ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 13:29:25 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 13:29:25 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 13:29:25 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:29:25 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 13:29:25 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:29:25 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 13:29:30 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 13:29:31 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQC-tAuWlhjFkQMcNl9lwk8XBYjkwJwzQy-1enxHMX-h2UiIsQMKolNxKWrKV5TUup-iS8Bh22zEUWpDQZIcVdyt-ofqkB4ZK0uQx8HlRxOf76tsQKNepwtTe4gN6SXjbc7w7Cr7r-ikqQmd3cy6Mk3JP6WbSa269JPqa92Ac75bejTIpCjhmsD58dNm6xGT4n3l4aP7rNaAgljW6JQMTiMsczsk5zWqDQ2TgAPZCZXsU6L6E-fwB00CZ3u2tj1Cee9XKscwCaionnJC8GCLK1zKQMdqBamsEEpTSx2LPZ9x6FObj5KrM1j5nNhVtar4aOw&state=30bc4c44203076605b3db39d027f2b365748b97d4d2f07a0" for ::1 at 2015-04-08 13:29:31 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQC-tAuWlhjFkQMcNl9lwk8XBYjkwJwzQy-1enxHMX-h2UiIsQMKolNxKWrKV5TUup-iS8Bh22zEUWpDQZIcVdyt-ofqkB4ZK0uQx8HlRxOf76tsQKNepwtTe4gN6SXjbc7w7Cr7r-ikqQmd3cy6Mk3JP6WbSa269JPqa92Ac75bejTIpCjhmsD58dNm6xGT4n3l4aP7rNaAgljW6JQMTiMsczsk5zWqDQ2TgAPZCZXsU6L6E-fwB00CZ3u2tj1Cee9XKscwCaionnJC8GCLK1zKQMdqBamsEEpTSx2LPZ9x6FObj5KrM1j5nNhVtar4aOw", "state"=>"30bc4c44203076605b3db39d027f2b365748b97d4d2f07a0"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 103ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 13:29:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 96ms (Views: 94.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 13:29:32 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 13:29:32 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 13:29:32 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:29:32 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:29:32 +0100
+
+
+Started POST "/users" for ::1 at 2015-04-08 13:33:59 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Kdfq98qMP7zovj53sXcM+S2+rpazhhnQs9/ieVgS5zzOs84d83OCt4xF2QfYvcPXfmiCUpeE5ALcHAKhYuJ7Xw==", "user"=>{"email"=>"edward.brown.london@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'edward.brown.london@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 200ms (Views: 85.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 13:33:59 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:33:59 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:33:59 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 13:33:59 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 13:33:59 +0100
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-08 13:34:03 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 73ms (Views: 72.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 13:34:03 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 13:34:03 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:34:03 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 13:34:03 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:34:03 +0100
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-08 13:34:08 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qxNKDSwBw6Lao6yPrNTvaVKQxwLXT9c7cKVUwFjBS+VMd27nFf5+qb5YS//FHiBHAUbrxvNNKukfZrQYYjHXhg==", "user"=>{"email"=>"edward.brown.london@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (13.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "edward.brown.london@gmail.com"]]
+Completed 401 Unauthorized in 112ms (ActiveRecord: 13.1ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qxNKDSwBw6Lao6yPrNTvaVKQxwLXT9c7cKVUwFjBS+VMd27nFf5+qb5YS//FHiBHAUbrxvNNKukfZrQYYjHXhg==", "user"=>{"email"=>"edward.brown.london@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 169ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 13:34:09 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:34:09 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 13:34:09 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:34:09 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 13:34:09 +0100
+
+
+Started POST "/users/sign_in" for ::1 at 2015-04-08 13:34:19 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bMFeP8tLz+FZjEujpcz6QxKFLcCLoTTGNeos0Uf+x/GLpXrV8rRy6j13rNPMBjVtQVMBBK+jyRRaKcwJfQ5bkg==", "user"=>{"email"=>"edward.brown.london@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "edward.brown.london@gmail.com"]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (4.6ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", "2015-04-08 12:34:19.278313"], ["sign_in_count", 2], ["updated_at", "2015-04-08 12:34:19.282282"], ["id", 1]]
+  [1m[35m (1.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 125ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/" for ::1 at 2015-04-08 13:34:19 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.5ms)[0m  SELECT "feasts".* FROM "feasts"
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1[0m  [["feast_id", 1]]
+  Rendered feasts/index.html.erb within layouts/application (4.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 13:34:19 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 13:34:19 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 13:34:19 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:34:19 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 13:34:19 +0100
+
+
+Started GET "/" for ::1 at 2015-04-08 14:35:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (6.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FeastsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (6.4ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  [1m[35mReview Exists (6.4ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1  [["feast_id", 1]]
+  Rendered feasts/index.html.erb within layouts/application (106.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 302ms (Views: 241.4ms | ActiveRecord: 26.6ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:35:55 +0100
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-04-08 14:36:15 +0100
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZXdJypiLylz/n3KmrQfmF0XgOv19rXSd82Jw4RcZSP68xYw1+UvW23vpBgiZIUkw6i5s7pGveHpuzjD0KScNZg=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (11.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 39ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/" for ::1 at 2015-04-08 14:36:15 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.3ms)[0m  SELECT "feasts".* FROM "feasts"
+  [1m[36mReview Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1[0m  [["feast_id", 1]]
+  Rendered feasts/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 65ms (Views: 63.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:36:15 +0100
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-08 14:36:16 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (3.6ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 102ms (Views: 99.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:36:19 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:36:19 +0100
+
+
+Started GET "/" for ::1 at 2015-04-08 14:41:25 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  [1m[35mReview Exists (0.3ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1  [["feast_id", 1]]
+  Rendered feasts/index.html.erb within layouts/application (96.6ms)
+Completed 200 OK in 311ms (Views: 287.2ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2015-04-08 14:41:25 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  [1m[36mReview Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1[0m  [["feast_id", 1]]
+  Rendered feasts/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 57ms (Views: 55.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:41:26 +0100
+
+
+Started GET "/users/sign_in" for ::1 at 2015-04-08 14:41:27 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (3.5ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/sessions/new.html.erb within layouts/application (54.1ms)
+Completed 200 OK in 140ms (Views: 121.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:41:30 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:41:30 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCzn2_mqCfUInBbRdpfYe-22ikezw7OOxnaaf3iD5Nqbc01cwwqG0-5wkarPnvhaJ_3J1fuy4ac4cZYWr-ShMumSHxwAtxGlikLPcqMqtbRjH3GPhogENQxpba_URlNXGvHNXQYoM6pCule1IwLzuVsO-6mlb_37npujVmNvLKfDjqLSddIYKiyovxKT2hr9cw-t8XvCkZsDfTyGioQGaqCr92gcpIcfliPRvTBPxpjpTZr2-_Ct0zITzUYPmYC6veBfmFLaKXiydaI4dPK9kmrWlw4A5WcYo2s6lCib5Vn8inPQToJa01qe0mPIrfPUuA&state=def832b477eace36edb86d3bcfb044b792c315ccd2412796" for ::1 at 2015-04-08 14:41:30 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCzn2_mqCfUInBbRdpfYe-22ikezw7OOxnaaf3iD5Nqbc01cwwqG0-5wkarPnvhaJ_3J1fuy4ac4cZYWr-ShMumSHxwAtxGlikLPcqMqtbRjH3GPhogENQxpba_URlNXGvHNXQYoM6pCule1IwLzuVsO-6mlb_37npujVmNvLKfDjqLSddIYKiyovxKT2hr9cw-t8XvCkZsDfTyGioQGaqCr92gcpIcfliPRvTBPxpjpTZr2-_Ct0zITzUYPmYC6veBfmFLaKXiydaI4dPK9kmrWlw4A5WcYo2s6lCib5Vn8inPQToJa01qe0mPIrfPUuA", "state"=>"def832b477eace36edb86d3bcfb044b792c315ccd2412796"}
+  [1m[35mUser Load (17.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.0ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 126ms (ActiveRecord: 18.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 14:41:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 82ms (Views: 79.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:41:31 +0100
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "users"
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.5ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[35m (12.9ms)[0m  COMMIT
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:43:15 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:43:16 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQAOApjknzt6EPUVkkpLu-8N7LLXROGypARQhx63FFy8RHP4aKIR7LuFsY3bNN4HGRz7p8II4vBlx3Vv1nCbBiqQ0wli7H0xX6bempvWmMVZ_fiWEDI9K8Ak_vrGUvGcpqA-R5jn01ZJqb44TkA4lwLS4-G-wUuWvVPX3JfT_BQz1FxbkDXNWAtQE9vCHvO4g564Y54K8iKfpZrqzhqHziQ9IYdZYwyY_qna7gJFe5ta6_leZJA7Tg75bdyl3mgJwtgYEqQShynnY3VCimu3vSpl1wQgGNagg1v-zlgUqeWjyMwrrQhWZkcWzlI1jSaYwsg&state=65c721b05a75dcb3291e105d19f6ef1760e48a211f620481" for ::1 at 2015-04-08 14:43:16 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAOApjknzt6EPUVkkpLu-8N7LLXROGypARQhx63FFy8RHP4aKIR7LuFsY3bNN4HGRz7p8II4vBlx3Vv1nCbBiqQ0wli7H0xX6bempvWmMVZ_fiWEDI9K8Ak_vrGUvGcpqA-R5jn01ZJqb44TkA4lwLS4-G-wUuWvVPX3JfT_BQz1FxbkDXNWAtQE9vCHvO4g564Y54K8iKfpZrqzhqHziQ9IYdZYwyY_qna7gJFe5ta6_leZJA7Tg75bdyl3mgJwtgYEqQShynnY3VCimu3vSpl1wQgGNagg1v-zlgUqeWjyMwrrQhWZkcWzlI1jSaYwsg", "state"=>"65c721b05a75dcb3291e105d19f6ef1760e48a211f620481"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 101ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 14:43:16 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.4ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:43:17 +0100
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:45:57 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:45:57 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQB3hyax--53QvrTl_BrsOvVHhii13HXO5tC0uhVEUBTdWSyVexfvRMvoYWI0fIXeUrsPO2PXUdjgPnzZ6gK_pBooWHAp3ksgWInxIILNSpc83ONfP-2nfQkMet7X8tJQdGS0lC10112gqU7BzXu63wWFIG2h1O9NvG4SZ519GLla7r5rYnD0bfJE03O46gToQHLqP4jpq4ULFIKYbLhp0U83RzONf4fUsWSAKyO2aSrZoVYa_kWnnk5zIUMEXSGJtdNxsytdaH76QQvYurAyAR08bbZ9GH5h0nthIBqLTimKlKU-9rcLLrJp-pLz1GrMoE&state=0cb444821042f1ba7f8eaeafee726d6f1a10cf37fa5d08c1" for ::1 at 2015-04-08 14:46:03 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB3hyax--53QvrTl_BrsOvVHhii13HXO5tC0uhVEUBTdWSyVexfvRMvoYWI0fIXeUrsPO2PXUdjgPnzZ6gK_pBooWHAp3ksgWInxIILNSpc83ONfP-2nfQkMet7X8tJQdGS0lC10112gqU7BzXu63wWFIG2h1O9NvG4SZ519GLla7r5rYnD0bfJE03O46gToQHLqP4jpq4ULFIKYbLhp0U83RzONf4fUsWSAKyO2aSrZoVYa_kWnnk5zIUMEXSGJtdNxsytdaH76QQvYurAyAR08bbZ9GH5h0nthIBqLTimKlKU-9rcLLrJp-pLz1GrMoE", "state"=>"0cb444821042f1ba7f8eaeafee726d6f1a10cf37fa5d08c1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 120ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 14:46:04 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 78ms (Views: 76.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:46:04 +0100
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "users"
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:54:53 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBc2ZqOmZi64tAsvvymePnQiFBggOMaMomjwLM1urFbQFSy3vNcq7RBp8vmI0wUDsSGDlzgjOxN-LEEuu78Tk793NO3NKNoRoYnoZKinSZxQ2ArXdQE00TkSZ6lkPylN8L0AqhedvyZpr6SuSBgEhy4kx9T_6C3PvgTkpXdT3imvSxj-MMED0IBeDRJ6UpG7qsuwuhAk3gajIXpmFLu93YQZfCSYc81itFTYIe_Qq2APdXQ9I9VDbtbwgKW8LHnQYGwQTWovbeC0TLTJkLFUj0W1kmvgxbcKGreh7j_huw6A4Gw3XThce7CbbvIjW-hddY&state=5feb013b2d9876adfc70fb83f1626d0e5abf2f9f134e3fab" for ::1 at 2015-04-08 14:54:54 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBc2ZqOmZi64tAsvvymePnQiFBggOMaMomjwLM1urFbQFSy3vNcq7RBp8vmI0wUDsSGDlzgjOxN-LEEuu78Tk793NO3NKNoRoYnoZKinSZxQ2ArXdQE00TkSZ6lkPylN8L0AqhedvyZpr6SuSBgEhy4kx9T_6C3PvgTkpXdT3imvSxj-MMED0IBeDRJ6UpG7qsuwuhAk3gajIXpmFLu93YQZfCSYc81itFTYIe_Qq2APdXQ9I9VDbtbwgKW8LHnQYGwQTWovbeC0TLTJkLFUj0W1kmvgxbcKGreh7j_huw6A4Gw3XThce7CbbvIjW-hddY", "state"=>"5feb013b2d9876adfc70fb83f1626d0e5abf2f9f134e3fab"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 95ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 14:54:54 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 81ms (Views: 79.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:54:54 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:55:40 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:55:40 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQDLD2yG7THE56D20eDuEADdCgivK2u9v7jVLUVV4ypnHhaIxhfE0Ovs2EIQq67eX5ao8gBD3etX0oVwQvZ2n0aLVrQPLUxikmkoV9JRBMi4QvJKrB52tKOT1rA32CIfGooWlmk0C8PtUaYYIT_AK5-4T8FMOtwjSqPoqLkaJGmRmMtPRqQ5oJTogicv5Gis30p1wSuvCuqNBqux-Yixj7xDjMJwqIoN29owJdeJziBywrfUaa_sxiqgQuOik6lVynjnIoQR5PCwuo_NDjTCS2qhUkGF5Gl-tpU8APrbJj4-ZBxIHcCnS1_CHVzl4t56Tng&state=5c79bbc4ac5fe0f3d41345ac165e4f2b1c489d83e6c03ce4" for ::1 at 2015-04-08 14:55:40 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDLD2yG7THE56D20eDuEADdCgivK2u9v7jVLUVV4ypnHhaIxhfE0Ovs2EIQq67eX5ao8gBD3etX0oVwQvZ2n0aLVrQPLUxikmkoV9JRBMi4QvJKrB52tKOT1rA32CIfGooWlmk0C8PtUaYYIT_AK5-4T8FMOtwjSqPoqLkaJGmRmMtPRqQ5oJTogicv5Gis30p1wSuvCuqNBqux-Yixj7xDjMJwqIoN29owJdeJziBywrfUaa_sxiqgQuOik6lVynjnIoQR5PCwuo_NDjTCS2qhUkGF5Gl-tpU8APrbJj4-ZBxIHcCnS1_CHVzl4t56Tng", "state"=>"5c79bbc4ac5fe0f3d41345ac165e4f2b1c489d83e6c03ce4"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 110ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 14:55:41 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 90ms (Views: 88.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:55:41 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:56:14 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQDSPhuRyvLN57YgLuL4M0mz31eEmwwK1IuFLQjhveathWYWY4Cp7nd5NvlLhnB4rn64ThfqheK0I_UboH7RCf6RhxPXOCrILHtX3LJatCwutH990vKhHZRt1__QNXXvja7KuwSADrf7Kx2UdGHnKWcivGzRRfm2OUX70MS7uDjhGn5t7OBB_FZgNOX_etsN4wnals1onLUjCehkIXA39e29U1pOM9wJMkKStGb6HwjKUGex9moiRiMmFgBpeDgg3TiyTN0SzH9lzTQd2EFLdCjZrSAkBur9wTZNcKOZ4a30lVk7GaZAbvWlStVj2NKfRO0&state=bad349b16aeb40bdb3b6bb0711dc38677d6309c61fe97687" for ::1 at 2015-04-08 14:56:15 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDSPhuRyvLN57YgLuL4M0mz31eEmwwK1IuFLQjhveathWYWY4Cp7nd5NvlLhnB4rn64ThfqheK0I_UboH7RCf6RhxPXOCrILHtX3LJatCwutH990vKhHZRt1__QNXXvja7KuwSADrf7Kx2UdGHnKWcivGzRRfm2OUX70MS7uDjhGn5t7OBB_FZgNOX_etsN4wnals1onLUjCehkIXA39e29U1pOM9wJMkKStGb6HwjKUGex9moiRiMmFgBpeDgg3TiyTN0SzH9lzTQd2EFLdCjZrSAkBur9wTZNcKOZ4a30lVk7GaZAbvWlStVj2NKfRO0", "state"=>"bad349b16aeb40bdb3b6bb0711dc38677d6309c61fe97687"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 113ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 14:56:15 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:56:15 +0100
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:57:29 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:57:29 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQDCgKVK95jETYsOW44xnsxbnO5Q4LcXq9cK-iGrXZEDovou3mQ7A8irWndaXQcuiQaR0Ausnc-lPx9YzOcYI-Jg5J-WY3FCQdnEBKE8rk51rfx9vK0oKVnrdiNMoR2VPCUSQUaOuNcvqPasHpGSZgc05oQuYpFU97JEIOCiid2DGHQLR_ftii5UxLjN8hvvMVaa4PjtQTON3FzyYoibk_6s-vANncmmkXSSi_K1I6fYIdh4HYN0bI4P22zMLlN29zhHuWwoNDrZJXJQUpJj1T7qA2uIBoJJNkWqa-t1mP9rf9uqNsSl3GHmC1893W-t4Fc&state=8a688d214e0beb20c467979b969cd8aba35f7374ef86a3e7" for ::1 at 2015-04-08 14:57:29 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQDCgKVK95jETYsOW44xnsxbnO5Q4LcXq9cK-iGrXZEDovou3mQ7A8irWndaXQcuiQaR0Ausnc-lPx9YzOcYI-Jg5J-WY3FCQdnEBKE8rk51rfx9vK0oKVnrdiNMoR2VPCUSQUaOuNcvqPasHpGSZgc05oQuYpFU97JEIOCiid2DGHQLR_ftii5UxLjN8hvvMVaa4PjtQTON3FzyYoibk_6s-vANncmmkXSSi_K1I6fYIdh4HYN0bI4P22zMLlN29zhHuWwoNDrZJXJQUpJj1T7qA2uIBoJJNkWqa-t1mP9rf9uqNsSl3GHmC1893W-t4Fc", "state"=>"8a688d214e0beb20c467979b969cd8aba35f7374ef86a3e7"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+Completed 422 Unprocessable Entity in 122ms (ActiveRecord: 3.8ms)
+
+ActiveRecord::RecordInvalid (Validation failed: Email can't be blank):
+  app/controllers/users/omniauth_callbacks_controller.rb:5:in `facebook'
+
+
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.0ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (77.0ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (65.1ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (139.2ms)
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:59:58 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 14:59:58 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBpxydZoeCcU5KHTSeOflgpFFhnhYqxHscGajqLsQ77pBPOpQIoqDKmK9880sIQRbTOCPxEFZf21RvnST190t7sYfsqviLRUdWAv6igz9bFTgN9hyApGdCUsoYiedwz-BlSLENGl7pTe6yoIcDgw2zBNsYzvmHDRbFLxMckdYnAyJjnd1bsdRImzByPYxH0-qanA_4d5xtZmitQreDJinditlBfSuxL07ZMlVZtgJsAR5pQv6EC-b8iJwF5e1WVbhFAZ8bwJ9MpAPXrsiMX5vBOAsYTlqExkInADxTJBRMfqeEKa96wVvY91a2rzZl0hzQ&state=d25562e3f3badda9bd20f8b9c88a0c3018d8c6c7e2a8a360" for ::1 at 2015-04-08 14:59:58 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBpxydZoeCcU5KHTSeOflgpFFhnhYqxHscGajqLsQ77pBPOpQIoqDKmK9880sIQRbTOCPxEFZf21RvnST190t7sYfsqviLRUdWAv6igz9bFTgN9hyApGdCUsoYiedwz-BlSLENGl7pTe6yoIcDgw2zBNsYzvmHDRbFLxMckdYnAyJjnd1bsdRImzByPYxH0-qanA_4d5xtZmitQreDJinditlBfSuxL07ZMlVZtgJsAR5pQv6EC-b8iJwF5e1WVbhFAZ8bwJ9MpAPXrsiMX5vBOAsYTlqExkInADxTJBRMfqeEKa96wVvY91a2rzZl0hzQ", "state"=>"d25562e3f3badda9bd20f8b9c88a0c3018d8c6c7e2a8a360"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 101ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 14:59:59 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.6ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 14:59:59 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:00:16 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQAk4WkwVlRgMoYbGkrnWQTVLDyA8RfRqXKw_Ka8vR4yMLsTnSiHQR9V071WsnBF6P0VpF3fPPJM-7bqmimUh9Ev7OZOLkSDqSZVEZP6T2EsHZ2u0hWZFfXcOgCZZLa7Z3kgK-fQ07i23mWIjnF5EDp-0E4rJ8kRlebrWDzhV_ZkemIV4KISQjLp9oehhIZcym4UtomsKHN5hQ4c0Sc9Lvc34eIiObE_PlHsjopLUDwwxKcjGM101EP9xVvWsTe6n9BkVd5rhcRPamL7fXfzi2cafYLbbh_susYxkMeRXM1JVdsIoNYPbYn6WNyi1qHmM8Q&state=0c137b07d79eb473a8b1cf1088c91c1fcf01ab6f489d3c50" for ::1 at 2015-04-08 15:00:17 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAk4WkwVlRgMoYbGkrnWQTVLDyA8RfRqXKw_Ka8vR4yMLsTnSiHQR9V071WsnBF6P0VpF3fPPJM-7bqmimUh9Ev7OZOLkSDqSZVEZP6T2EsHZ2u0hWZFfXcOgCZZLa7Z3kgK-fQ07i23mWIjnF5EDp-0E4rJ8kRlebrWDzhV_ZkemIV4KISQjLp9oehhIZcym4UtomsKHN5hQ4c0Sc9Lvc34eIiObE_PlHsjopLUDwwxKcjGM101EP9xVvWsTe6n9BkVd5rhcRPamL7fXfzi2cafYLbbh_susYxkMeRXM1JVdsIoNYPbYn6WNyi1qHmM8Q", "state"=>"0c137b07d79eb473a8b1cf1088c91c1fcf01ab6f489d3c50"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 117ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 15:00:17 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.0ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 15:00:17 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:00:44 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:00:44 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBTOnCORzrs6STTaBrOpj_1uyrkkfqoSpULWMzwDky9pU48KydaVllmkdqTRnABjSygAqUKsc70eMk2OMbtkbE6Ao8JtfrCYaYVIQllB6X2ggyG6mxS7AGoinTOnvdGSp4KbJjkYOs8p8EQjNSPfmAY_DmB6FBz1gxJs3J0zrWcDS8ALPrTqEZ4fnL08UWvKLBZSZNsFqXgSEvqweS4KlTopw-pp4ZRxTYKgQkK6AUNhPJtWdCAngz_TwOI8QZ8pLDBAbCrZgq0yiyiylniDPVADOuj67k4Sg-WNaHR-lDFVnoa3KfXJaD8E62FFpNIYEA&state=25bbd9282ecb2f937f750643647a76169fd386b0915ff3fc" for ::1 at 2015-04-08 15:00:45 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBTOnCORzrs6STTaBrOpj_1uyrkkfqoSpULWMzwDky9pU48KydaVllmkdqTRnABjSygAqUKsc70eMk2OMbtkbE6Ao8JtfrCYaYVIQllB6X2ggyG6mxS7AGoinTOnvdGSp4KbJjkYOs8p8EQjNSPfmAY_DmB6FBz1gxJs3J0zrWcDS8ALPrTqEZ4fnL08UWvKLBZSZNsFqXgSEvqweS4KlTopw-pp4ZRxTYKgQkK6AUNhPJtWdCAngz_TwOI8QZ8pLDBAbCrZgq0yiyiylniDPVADOuj67k4Sg-WNaHR-lDFVnoa3KfXJaD8E62FFpNIYEA", "state"=>"25bbd9282ecb2f937f750643647a76169fd386b0915ff3fc"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 109ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 15:00:45 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.7ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 60ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 15:00:45 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:01:06 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:01:06 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQB9rG-QKOcWe-uzUlQ-9b-NDH8CyRLMwgY8PVx2DRnK6tXX1H5qCQdhl7fgSdIPWIzRqkr4Df5T8nvtSXOP60o4X8ZtNrDm67020meA74eJnfgkGbfezZJcw__mJmixgrgpOz5jt0xhwgofl-goCejTeZE6mWi6hDFV5dSZlxNkOY3mdCXQdpZBKg9sPpU6Yf_cBA7mz3rWHJXEVnE4kJE5urH6V5HygvbUwOUq6-Y5ftdugAQJMz-UKZeUzyB3NG4yv7ksPuZLNqKji-NUPvk3KruugppJTPeYuBmaSifuieHI74CK-a8AUtfCx8uO6JA&state=16feca0d3b81b31a0b6c83759f90422751d9ff7216eadbb7" for ::1 at 2015-04-08 15:01:06 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQB9rG-QKOcWe-uzUlQ-9b-NDH8CyRLMwgY8PVx2DRnK6tXX1H5qCQdhl7fgSdIPWIzRqkr4Df5T8nvtSXOP60o4X8ZtNrDm67020meA74eJnfgkGbfezZJcw__mJmixgrgpOz5jt0xhwgofl-goCejTeZE6mWi6hDFV5dSZlxNkOY3mdCXQdpZBKg9sPpU6Yf_cBA7mz3rWHJXEVnE4kJE5urH6V5HygvbUwOUq6-Y5ftdugAQJMz-UKZeUzyB3NG4yv7ksPuZLNqKji-NUPvk3KruugppJTPeYuBmaSifuieHI74CK-a8AUtfCx8uO6JA", "state"=>"16feca0d3b81b31a0b6c83759f90422751d9ff7216eadbb7"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 102ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 15:01:07 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 68ms (Views: 67.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 15:01:07 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:01:26 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:01:26 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBIIzUd2uVP1nR3hFiugLeamTW78P-YoYxupDufGiA9-8CufF7iiBFOU9L60wsovxjJ3gz_uRfiM7LA6OnCZ9vjHBSuqGqkfF5pYhBb0DTC0gGTauO8YmvLexpny25rQxlKDt6p6GYoQHER313If_SK2AfXfWClZo_bbEIsSSzs-2CRDF9tgFcWWr6bZES8D85NJYpufq_Q_CNnh5G6L8XreX7y5iG0RmBV2V50Na4nFn8lytiaOm5_8eHSuq-C4WM55--qCy8kjfmvDLlusp7t0M8WEW-s1JFG1S9qU6ckcBsF3QtbGjDLQ-zpoFvKKv8&state=6b8e099b9a3bd68d1a40708c92b26e18ec8bd9d734528933" for ::1 at 2015-04-08 15:01:26 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBIIzUd2uVP1nR3hFiugLeamTW78P-YoYxupDufGiA9-8CufF7iiBFOU9L60wsovxjJ3gz_uRfiM7LA6OnCZ9vjHBSuqGqkfF5pYhBb0DTC0gGTauO8YmvLexpny25rQxlKDt6p6GYoQHER313If_SK2AfXfWClZo_bbEIsSSzs-2CRDF9tgFcWWr6bZES8D85NJYpufq_Q_CNnh5G6L8XreX7y5iG0RmBV2V50Na4nFn8lytiaOm5_8eHSuq-C4WM55--qCy8kjfmvDLlusp7t0M8WEW-s1JFG1S9qU6ckcBsF3QtbGjDLQ-zpoFvKKv8", "state"=>"6b8e099b9a3bd68d1a40708c92b26e18ec8bd9d734528933"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 113ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 15:01:27 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (1.2ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 87ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 15:01:27 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:01:53 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:01:53 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQCEfRnRXTDGUcHvhTMG_KHKkAfMrLgvWkeXRVlLNyxtB_gL_uJvzG_OQ0sQp5tySbe6nT81FtPXppWje5dhVzsrJGy5OMAiR06c6wXiZLnz1SdqJgPG44z7SANcBMa--QRA4-0a0RIqqiDKRsGlsp2hsU_KNsu6D65NjomYSSPiMtPtolWCQMMAapdZw2C_OF9bvemp0Oa_uY9dY33rESHARLfePYBbnZwtvtw4YbZyIH0-w3nDuPYv9wapVpOUzztsboNHkNZRdMBII3VcKP5J6BozL_0q8jWrdVXs1uuLmsz89N2GSLtH3AI0E_z-a_w&state=dd7b4d50c33c57da5dadc24257acc353519123923ac83e68" for ::1 at 2015-04-08 15:01:53 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCEfRnRXTDGUcHvhTMG_KHKkAfMrLgvWkeXRVlLNyxtB_gL_uJvzG_OQ0sQp5tySbe6nT81FtPXppWje5dhVzsrJGy5OMAiR06c6wXiZLnz1SdqJgPG44z7SANcBMa--QRA4-0a0RIqqiDKRsGlsp2hsU_KNsu6D65NjomYSSPiMtPtolWCQMMAapdZw2C_OF9bvemp0Oa_uY9dY33rESHARLfePYBbnZwtvtw4YbZyIH0-w3nDuPYv9wapVpOUzztsboNHkNZRdMBII3VcKP5J6BozL_0q8jWrdVXs1uuLmsz89N2GSLtH3AI0E_z-a_w", "state"=>"dd7b4d50c33c57da5dadc24257acc353519123923ac83e68"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1  [["provider", "facebook"], ["uid", "10153246569229456"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 105ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 15:01:54 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.5ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 110ms (Views: 108.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 15:01:54 +0100
+
+
+Started GET "/users/sign_up" for ::1 at 2015-04-08 15:04:10 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/shared/_links.html.erb (0.8ms)
+  Rendered /Users/edwardbrown/.rvm/gems/ruby-2.2.0/gems/devise-3.4.1/app/views/devise/registrations/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 15:04:10 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:04:24 +0100
+
+
+Started GET "/users/auth/facebook" for ::1 at 2015-04-08 15:04:25 +0100
+
+
+Started GET "/users/auth/facebook/callback?code=AQBCro2ILmy1WOGSpUuaaAuGwfDhONF74VWHS7RsFAasfwfl1epLEnVbQ122-O_LG2HpbbRzxzA2dUnFhmx69qAraw5u_yFcyJH4lNBr9MnEIGIdCcFn7sSf4FUKi7KObr-xh04J3hzmxA84apJG9BU3bDeX-7Mrim7K44GyeqsV4RBiMyeA1ZJ5OhtPIMEgpSHW4alAgit2FU35QvSWenR1Hr9KP1qKLuKmLEvIOr0yzrfpb2Gh4kEAZAuIMARsDb_r49iq1iOfCXGujstZ2gznvly8SJYQE3cfP3AaBGeZoezHvquqCBKDWNisYp3DdpM&state=52050890fb491de2f4d753fac22dc6b1f4a17e268e41b6fd" for ::1 at 2015-04-08 15:04:29 +0100
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQBCro2ILmy1WOGSpUuaaAuGwfDhONF74VWHS7RsFAasfwfl1epLEnVbQ122-O_LG2HpbbRzxzA2dUnFhmx69qAraw5u_yFcyJH4lNBr9MnEIGIdCcFn7sSf4FUKi7KObr-xh04J3hzmxA84apJG9BU3bDeX-7Mrim7K44GyeqsV4RBiMyeA1ZJ5OhtPIMEgpSHW4alAgit2FU35QvSWenR1Hr9KP1qKLuKmLEvIOr0yzrfpb2Gh4kEAZAuIMARsDb_r49iq1iOfCXGujstZ2gznvly8SJYQE3cfP3AaBGeZoezHvquqCBKDWNisYp3DdpM", "state"=>"52050890fb491de2f4d753fac22dc6b1f4a17e268e41b6fd"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."provider" = $1 AND "users"."uid" = $2  ORDER BY "users"."id" ASC LIMIT 1[0m  [["provider", "facebook"], ["uid", "10100289290057684"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (29.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'yannickbrunner@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (6.9ms)[0m  INSERT INTO "users" ("provider", "uid", "email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["provider", "facebook"], ["uid", "10100289290057684"], ["email", "yannickbrunner@gmail.com"], ["encrypted_password", "$2a$10$HApCBU0u9mL0hNGjPQRYkuIycvjcF.3Ora.jNVh0UULQR8.MyCrwC"], ["created_at", "2015-04-08 14:04:30.355166"], ["updated_at", "2015-04-08 14:04:30.355166"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (12.8ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "last_sign_in_ip" = $3, "current_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["last_sign_in_at", "2015-04-08 14:04:30.370078"], ["current_sign_in_at", "2015-04-08 14:04:30.370078"], ["last_sign_in_ip", "::1/128"], ["current_sign_in_ip", "::1/128"], ["sign_in_count", 1], ["updated_at", "2015-04-08 14:04:30.372793"], ["id", 2]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 52.1ms)
+
+
+Started GET "/" for ::1 at 2015-04-08 15:04:30 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (11.6ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (6.4ms)[0m  SELECT "feasts".* FROM "feasts"
+  [1m[36mReview Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1[0m  [["feast_id", 1]]
+  Rendered feasts/index.html.erb within layouts/application (40.5ms)
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+Completed 200 OK in 120ms (Views: 92.8ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:04:30 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-08 15:04:30 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-08 15:04:30 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-08 15:04:30 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-08 15:04:30 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-08 15:04:30 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:04:30 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-08 15:04:30 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-08 15:04:30 +0100
