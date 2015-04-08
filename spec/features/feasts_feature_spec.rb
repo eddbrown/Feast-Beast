@@ -1,10 +1,11 @@
 require 'rails_helper'
+require_relative 'helpers.rb'
 
 feature 'feasts' do
 
   context 'no feasts have been added' do
     scenario 'should display a prompt to add a feast' do
-      visit '/feasts'
+      sign_up
       expect(page).to have_content 'No feasts yet'
       expect(page).to have_link 'Add a feast'
     end
@@ -24,7 +25,7 @@ feature 'feasts' do
 
   context 'creating feasts' do
     scenario 'prompts user to fill out a form, then displays the new feast' do
-      visit '/feasts'
+      sign_up
       click_link 'Add a feast'
       fill_in 'Name', with: 'Sushi'
       click_button 'Create Feast'
@@ -50,7 +51,7 @@ feature 'feasts' do
     let!(:shawarma){Feast.create(name:'Shawarma')}
 
     scenario 'user can edit feast profile' do
-      visit '/feasts'
+      sign_up
       click_link "Edit #{shawarma.name}"
       fill_in 'Name', with: 'Burger Joint'
       click_button 'Update Feast'
@@ -64,7 +65,7 @@ feature 'feasts' do
     let!(:shawarma){Feast.create(name:'Shawarma')}
 
     scenario 'removes a feast when a user clicks delete link' do
-      visit '/feasts'
+      sign_up
       click_link "Delete #{shawarma.name}"
       expect(page).not_to have_content shawarma.name
       expect(page).to have_content 'Feast deleted successfully'

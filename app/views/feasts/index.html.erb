@@ -18,4 +18,6 @@
   <h1>No feasts yet</h1>
 <% end %>
 
-<a href='feasts/new'>Add a feast</a>
+<% if user_signed_in? %>
+  <a href='feasts/new'>Add a feast</a>
+<% end %>
