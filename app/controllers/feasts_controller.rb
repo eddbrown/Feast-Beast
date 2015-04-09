@@ -8,7 +8,7 @@ before_action :authenticate_user!, :except => [:index, :show]
       marker.lat feast.latitude
       marker.lng feast.longitude
       # marker.weight review.rating
-      marker.infowindow '<h2>'+feast.name+'</h2>' + feast.description
+      marker.infowindow '<h4>'+feast.name+'</h4>' + feast.description
       marker.picture({
         "url" => "http://www.robertgrantstats.co.uk/software/marker-icon-purple.png",
         "width" => 26,

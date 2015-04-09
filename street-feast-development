@@ -1,0 +1,207 @@
+\l
+\l
+CREATE DATABASE test WITH OWNER yannickbrunner ENCODING 'UTF8';
+\l
+CREATE TABLE Persons
+(
+PersonID int,
+LastName varchar(30)
+FirstName varchar(30)
+Address varchar(200)
+City varchar(255)
+);
+CREATE TABLE Persons
+(
+PersonID,
+LastName varchar(30),
+FirstName varchar(30),
+Address varchar(200),
+City varchar(255)
+);
+CREATE TABLE Persons
+(
+Person ID,
+last_name varchar(30));
+CREATE TABLE test(
+user_id serial PRIMARY KEY,
+username VARCHAR (50) UNIQUE NOT NULL,
+password VARCHAR (50) NOT NULL,
+email VARCHAR (355) UNIQUE NOT NULL,
+created_on TIMESTAMP NOT NULL,
+last_login TIMESTAMP
+);
+CREATE TABLE role(
+role_id serial PRIMARY KEY,
+role_name VARCHAR (255) UNIQUE NOT NULL
+);
+CREATE TABLE account_role
+(
+user_id integer NOT NULL,
+role_id integer NOT NULL,
+grand_date timestamp without time zone,
+PRIMARY KEY(user_id, role_id),
+CONSTRAINT account_role_role_id_fkey FOREIGN KEY (role_id)
+REFERENCES role (role_id) MATCH SIMPLE
+ON UPDATE NO ACTION ON DELETE NO ACTION,
+CONSTRAINT account_role_user_id_fkey FOREIGN KEY (user_id)
+REFERENCES account (user_id) MATCH SIMPLE
+ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+;
+SELECT * FROM role;
+SELECT * FROM test;
+INSERT INTO test VALUES(1,'yannick','emeline','yannick@gmail.com',NOW(),NOW());
+SELECT * FROM test;
+INSERT INTO test VALUES(1,'aude','emeline','yannick@gmail.com',NOW(),NOW());
+INSERT INTO test VALUES(2,'aude','emeline','aude@gmail.com',NOW(),NOW());
+INSERT INTO test VALUES(3,'eric','emeline','eric@gmail.com',NOW(),NOW());
+SELECT * FROM test;
+SELECT username, password FROM test;
+RENAME TABLE username to name;
+UPDATE test
+SET username='yannick'
+where name='yannick'
+;
+SELECT DISTINC password FORM test;
+SELECT DISTINCT password FORM test;
+SELECT DISTINCT password FROM test;
+SELECT username FROM test WHERE password='emeline'
+;
+\q
+postgres# create database "ecomba";
+create database "ecomba";
+\q
+CREATE DATABASE "bookmark_manager_test";
+CREATE DATABASE "bookmark_manager_development";
+\q
+create database yannickbrunner;
+\q
+\l
+\c bookmark_manager_development ;
+\dt
+\dt
+\dt
+\c bookmark_manager_test ;
+\dt
+\dt
+\l
+SELECT * FROM bookmark_manager_development
+;
+\c bookmark_manager_development
+SELECT * FROM bookmark_manager_development
+;
+SELECT * FROM bookmark_manager_development;
+/dt
+\l
+\l
+\ls
+\dt
+SELECT * FROM links
+;
+SELECT * FROM links;
+DELETE FROM table
+WHERE link.id = 1
+WHERE link.id = 2
+;
+DELETE FROM links
+WHERE link.id = 1
+WHERE link.id = 2
+;
+DELETE FROM links
+WHERE link.id = 1;
+DELETE FROM links
+WHERE id = 1;
+DELETE FROM links
+WHERE id = 2;
+\dt
+SELECT * FROM links
+;
+SELECT * FROM links
+;
+/l
+\l
+\c yannickbrunner
+CREATE DATABASE chitter_development
+;
+CREATE DATABASE chitter_test;
+;
+\l
+\c chitter_test
+\l
+\lc
+\ls
+SELECT * FROM chitter_test
+\ls
+SELECT * FROM chitter_test
+SELECT * FROM chitter_test
+SELECT * FROM chitter_test;
+SELECT * FROM chitter_test
+SELECT * FROM chitter_test
+SELECT * FROM chitter_test;
+SELECT * FROM chitter_test;
+\list
+\dt
+\dt *.*
+SELECT * FROM User
+;
+SELECT * FROM peep;
+SELECT * FROM Peep;
+SELECT * FROM user;
+\dt *.*
+\c bookmark_manager_development
+\dt *.*
+\ls
+\l
+\l
+\dt
+\c chitter_test
+\dt
+\d
+\dt
+\dt
+SELEC * FROM peeps
+;
+SELECT * FROM peeps
+;
+SELECT * FROM peeps
+;
+SELECT * FROM peeps
+;
+SELECT * FROM peeps
+;
+SELECT * FROM peeps
+;
+SELECT * FROM peeps
+;
+SELECT * FROM users
+;
+SELECT * FROM users
+;
+SELECT * FROM users
+;
+\l
+\c boomkark_manager_development
+\c bookmark_manager_development
+\cd
+\dt
+SELECT * FROM users
+;
+\c bookmark_manager_test
+SELECT * FROM users
+;
+SELECT * FROM users
+;
+\c bookmark_manager_test
+\l
+\c street-feast_development
+\dt
+SELECT * FROM users
+;
+SELECT * FROM reviews;
+/q
+\q
+/l
+\l
+\d street-feast-development
+street-feast-development
+\s street-feast-development
