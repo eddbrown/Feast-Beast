@@ -15,6 +15,7 @@
       <ul>
         <% feast.reviews.each do |review| %>
           <li><%= review.thoughts %>, <strong><%= review.rating %></strong>/5</li>
+          <%= link_to "X", feast_review_path(feast,review), method: :delete  %>
         <% end %>
       </ul>
     <% else %>

@@ -23,6 +23,17 @@ feature 'reviewing' do
     expect(page).to have_content "You cannot review the same feast more than once"
   end
 
+  scenario 'a user cannot delete someone elses review' do
+    sign_up
+    create_feast
+    create_review
+    click_link "Sign out"
+    sign_up2
+    click_link 'X'
+    expect(page).to have_content "solid"
+    expect(page).to have_content "You cannot delete this review"
+  end
+
   scenario 'it notifies a user he must login to leave a review' do
     sign_up
     create_feast
