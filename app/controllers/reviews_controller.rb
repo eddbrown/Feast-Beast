@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def new
     @feast = Feast.find(params[:feast_id])
     @review = Review.new
