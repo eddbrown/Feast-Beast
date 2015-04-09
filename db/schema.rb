@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20150408160244) do
     t.datetime "updated_at",  null: false
     t.text     "description"
     t.integer  "user_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
   end
 
   add_index "feasts", ["user_id"], name: "index_feasts_on_user_id", using: :btree

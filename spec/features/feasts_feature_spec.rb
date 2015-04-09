@@ -13,7 +13,7 @@ feature 'feasts' do
 
   context 'feasts have been added' do
     before do
-      Feast.create(name: 'Sushi')
+      Feast.create(name: 'Sushi', description: 'OK', address: 'London')
     end
 
     scenario 'display feasts' do
@@ -36,7 +36,7 @@ feature 'feasts' do
 
   context 'viewing feast page' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma')}
+    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
 
     scenario 'user clicks link and is directed to feast page' do
       visit '/feasts'
@@ -48,7 +48,7 @@ feature 'feasts' do
 
   context 'updating feasts' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma')}
+    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
 
     scenario 'user can edit feast profile' do
       sign_up
@@ -62,7 +62,7 @@ feature 'feasts' do
 
   context 'deleting feasts' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma')}
+    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
 
     scenario 'removes a feast when a user clicks delete link' do
       sign_up

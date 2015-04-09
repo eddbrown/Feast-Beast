@@ -10,4 +10,7 @@ class Feast < ActiveRecord::Base
     new_review 
   end
   
+  geocoded_by :address
+  after_validation :geocode
+  
 end

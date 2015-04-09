@@ -50,3 +50,6 @@ group :test do
   gem 'capybara'
   gem 'shoulda'
 end
+
+gem 'geocoder'
+gem 'gmaps4rails'

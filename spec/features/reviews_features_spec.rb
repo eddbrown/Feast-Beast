@@ -2,7 +2,7 @@ require 'rails_helper'
 require_relative 'helpers.rb'
 
 feature 'reviewing' do
-  let!(:kebab){Feast.create(name: 'Kebabs')}
+  let!(:kebab){Feast.create(name: 'Kebabs', description: 'OK', address: 'London')}
 
   scenario 'allows users to write a review' do
     sign_up

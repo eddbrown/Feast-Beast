@@ -1,5 +1,8 @@
 <p><%= @feast.name %></p>
 <p><%= @feast.description %></p>
+<p><%= @feast.address %></p>
+<p>Latitude: <%= @feast.latitude %></p>
+<p>Longitude: <%= @feast.longitude %></p>
 
 <% if @feast.reviews.any? %>
 <ul>
