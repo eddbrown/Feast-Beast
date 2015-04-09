@@ -4,9 +4,13 @@
 <% if @feasts.any? %>
   <% @feasts.each do |feast| %>
     <h2><%= link_to feast.name, feast_path(feast) %></h2>
-    <%= link_to "Edit #{feast.name}", edit_feast_path(feast) %>
-    <%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %>
-    <%= link_to "Review #{feast.name}", new_feast_review_path(feast) %>
+      <% if user_signed_in? %>
+        <%= link_to "Edit #{feast.name}", edit_feast_path(feast) %>
+        <%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %>
+        <%= link_to "Review #{feast.name}", new_feast_review_path(feast) %>
+      <% else %>
+         (log in to leave a review) 
+      <% end %>
     <% if feast.reviews.any? %>
       <ul>
         <% feast.reviews.each do |review| %>

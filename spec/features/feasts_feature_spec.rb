@@ -48,27 +48,59 @@ feature 'feasts' do
 
   context 'updating feasts' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
-
     scenario 'user can edit feast profile' do
       sign_up
-      click_link "Edit #{shawarma.name}"
-      fill_in 'Name', with: 'Burger Joint'
+      create_feast
+      click_link "Edit test"
+      fill_in 'Name', with: 'test2'
       click_button 'Update Feast'
-      expect(page).to have_content 'Burger Joint'
+      expect(page).to have_content 'test2'
       expect(current_path).to eq '/feasts'
     end
+
+    scenario 'user cannot edit feast that they did not create' do
+      sign_up
+      create_feast
+      click_link "Sign out"
+      sign_up2
+      click_link "Edit test"
+      expect(page).to have_content "You cannot edit this feast"
+    end
+
+    scenario 'user does not have edit option if he is not signed in' do
+      sign_up
+      create_feast
+      click_link "Sign out"
+      expect(page).not_to have_content "Edit test"
+    end
+
   end
 
   context 'deleting feasts' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
-
     scenario 'removes a feast when a user clicks delete link' do
       sign_up
-      click_link "Delete #{shawarma.name}"
-      expect(page).not_to have_content shawarma.name
+      create_feast
+      click_link "Delete test"
+      expect(page).not_to have_content "test"
       expect(page).to have_content 'Feast deleted successfully'
+    end
+
+    scenario 'cannot remove a feast when a user is not the originator' do
+      sign_up
+      create_feast
+      click_link 'Sign out'
+      sign_up2
+      click_link "Delete test"
+      expect(page).to have_content 'test'
+      expect(page).to have_content 'You cannot delete this feast'
+    end
+
+    scenario 'user does not have delete option if he is not signed in' do
+      sign_up
+      create_feast
+      click_link "Sign out"
+      expect(page).not_to have_content "Delete test"
     end
   end
 

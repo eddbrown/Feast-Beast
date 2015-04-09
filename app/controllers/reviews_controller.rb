@@ -9,11 +9,16 @@ class ReviewsController < ApplicationController
 
   def create
     @feast = Feast.find(params[:feast_id])
-    @review = @feast.create_review(current_user, review_params)
-    if @review.save 
+    if !current_user.has_reviewed? @feast
+      @review = @feast.create_review(current_user, review_params)
+      if @review.save 
+        redirect_to '/feasts' 
+      else
+        render 'new'
+      end
+    else 
+      flash[:notice] = "You cannot review the same feast more than once"
       redirect_to '/feasts' 
-    else
-      render 'new'
     end
   end
 

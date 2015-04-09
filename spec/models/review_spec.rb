@@ -5,4 +5,5 @@ describe Review, :type => :model do
     review = Review.new(rating: 10)
     expect(Review.all.any?).to eq false
   end
+
 end

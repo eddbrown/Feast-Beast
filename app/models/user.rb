@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
    devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
   has_many :reviews
-  has_many :feasts
+  has_one :feast
   has_many :reviewed_feasts, through: :reviews, source: :feast
 
   def has_reviewed?(feast)
