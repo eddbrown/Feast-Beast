@@ -21,7 +21,8 @@ before_action :authenticate_user!, :except => [:index, :show]
   end
 
   def create
-    @feast = Feast.create(feast_params)
+    feast = Feast.new
+    current_user.create_feast(feast_params)
     redirect_to '/feasts'
   end
 
@@ -35,6 +36,12 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def edit
     @feast = Feast.find(params[:id])
+    if @feast.user_id == current_user.id
+      render 'edit'
+    else
+      flash[:notice] = "You cannot edit this feast"
+      redirect_to '/feasts'
+    end
   end
 
   def update
@@ -46,8 +53,12 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def destroy
     @feast = Feast.find(params[:id])
-    @feast.destroy
-    flash[:notice] = 'Feast deleted successfully'
+    if @feast.user_id == current_user.id 
+      @feast.destroy
+      flash[:notice] = "Feast deleted successfully"
+    else
+      flash[:notice] = "You cannot delete this feast"
+    end
     redirect_to '/feasts'
   end
 end
