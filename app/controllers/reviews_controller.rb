@@ -9,8 +9,23 @@ class ReviewsController < ApplicationController
 
   def create
     @feast = Feast.find(params[:feast_id])
-    @feast.reviews.create(review_params)
-    redirect_to feasts_path
+    @review = @feast.create_review(current_user, review_params)
+    if @review.save 
+      redirect_to '/feasts' 
+    else
+      render 'new'
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    if @review.user == current_user
+      @review.destroy
+      flash[:notice] = "Review deleted successfully"
+    else
+      flash[:notice] = "You cannot delete this review"
+    end
+    redirect_to '/feasts'
   end
 
   def review_params

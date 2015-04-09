@@ -5496,3 +5496,250 @@ Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for
   [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
   [1m[35mFeast Load (0.6ms)[0m  SELECT "feasts".* FROM "feasts" INNER JOIN "reviews" ON "feasts"."id" = "reviews"."feast_id" WHERE "reviews"."user_id" = $1  [["user_id", 2]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'feasts'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'reviews'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/" for ::1 at 2015-04-09 11:53:24 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.3ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  [1m[35mReview Exists (0.4ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1  [["feast_id", 2]]
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."feast_id" = $1[0m  [["feast_id", 2]]
+  [1m[35mUser Load (6.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered feasts/index.html.erb within layouts/application (87.7ms)
+Completed 200 OK in 154ms (Views: 129.8ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-09 11:53:24 +0100
+
+
+Started DELETE "/feasts/2" for ::1 at 2015-04-09 11:53:27 +0100
+Processing by FeastsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Mxx4+kBEMrTjtac3uik1I6K2MPxFRdbuwlfJ8iRqFNutjljmk2B/AOJkuULSq+BjUPgx+ZpLaiRvPmeup6hypg==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mFeast Load (0.3ms)[0m  SELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."feast_id" = $1  [["feast_id", 2]]
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "reviews" WHERE "reviews"."id" = $1[0m  [["id", 1]]
+  [1m[35mSQL (0.8ms)[0m  DELETE FROM "feasts" WHERE "feasts"."id" = $1  [["id", 2]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/feasts
+Completed 302 Found in 17ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/feasts" for ::1 at 2015-04-09 11:53:27 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered feasts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-09 11:53:27 +0100
+
+
+Started GET "/feasts/new" for ::1 at 2015-04-09 11:53:33 +0100
+Processing by FeastsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  Rendered feasts/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/feasts" for ::1 at 2015-04-09 11:53:37 +0100
+Processing by FeastsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vXXijbXbQpUTmCXJIe0Km2mhr3ztJF6tO1ruE45hCJEj58KRZv8PIRJJO7xJb9/bm++ueTIq4meWM0BPDaNu7A==", "feast"=>{"name"=>"Subway"}, "commit"=>"Create Feast"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mFeast Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "feasts" WHERE "feasts"."name" = 'Subway' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "feasts" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Subway"], ["created_at", "2015-04-09 10:53:37.530612"], ["updated_at", "2015-04-09 10:53:37.530612"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/feasts
+Completed 302 Found in 15ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/feasts" for ::1 at 2015-04-09 11:53:37 +0100
+Processing by FeastsController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "feasts"
+  [1m[36mFeast Load (0.2ms)[0m  [1mSELECT "feasts".* FROM "feasts"[0m
+  [1m[35mReview Exists (0.4ms)[0m  SELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1  [["feast_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered feasts/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-09 11:53:37 +0100
+
+
+Started GET "/feasts/3/reviews/new" for ::1 at 2015-04-09 11:53:39 +0100
+Processing by ReviewsController#new as HTML
+  Parameters: {"feast_id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mFeast Load (0.3ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered reviews/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 54ms (Views: 50.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/feasts/3/reviews" for ::1 at 2015-04-09 11:53:46 +0100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ip9p9zWwbSPLQQMJmP34g73DB4sk2pYJh1x1u5neHcoUDUnr5pQgl8qQHXzwfy3DT40GjvvUKsMqNdvnGhx7tw==", "review"=>{"thoughts"=>"It was terrible!", "rating"=>"1"}, "commit"=>"Leave Review", "feast_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mFeast Load (0.3ms)[0m  [1mSELECT  "feasts".* FROM "feasts" WHERE "feasts"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "reviews" ("thoughts", "rating", "feast_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["thoughts", "It was terrible!"], ["rating", 1], ["feast_id", 3], ["user_id", 2], ["created_at", "2015-04-09 10:53:46.860146"], ["updated_at", "2015-04-09 10:53:46.860146"]]
+  [1m[35m (8.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/feasts
+Completed 302 Found in 21ms (ActiveRecord: 10.2ms)
+
+
+Started GET "/feasts" for ::1 at 2015-04-09 11:53:46 +0100
+Processing by FeastsController#index as HTML
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "feasts"[0m
+  [1m[35mFeast Load (0.2ms)[0m  SELECT "feasts".* FROM "feasts"
+  [1m[36mReview Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "reviews" WHERE "reviews"."feast_id" = $1 LIMIT 1[0m  [["feast_id", 3]]
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."feast_id" = $1  [["feast_id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered feasts/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 54ms (Views: 51.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-04-09 11:53:46 +0100
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for ::1 at 2015-04-09 11:53:46 +0100
+
+
+Started GET "/assets/feasts-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-09 11:53:46 +0100
+
+
+Started GET "/assets/reviews-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-04-09 11:53:46 +0100
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-04-09 11:53:46 +0100
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-04-09 11:53:46 +0100
+
+
+Started GET "/assets/feasts-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-09 11:53:47 +0100
+
+
+Started GET "/assets/reviews-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-04-09 11:53:47 +0100
+
+
+Started GET "/assets/application-e5e7face3f4512cb331acefd5e77b444.js?body=1" for ::1 at 2015-04-09 11:53:47 +0100
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mFeast Load (0.6ms)[0m  SELECT  "feasts".* FROM "feasts"  ORDER BY "feasts"."id" ASC LIMIT 1
+  [1m[36mFeast Load (0.6ms)[0m  [1mSELECT "feasts".* FROM "feasts" INNER JOIN "reviews" ON "feasts"."id" = "reviews"."feast_id" WHERE "reviews"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mFeast Load (0.6ms)[0m  [1mSELECT "feasts".* FROM "feasts" INNER JOIN "reviews" ON "feasts"."id" = "reviews"."feast_id" WHERE "reviews"."user_id" = $1[0m  [["user_id", 2]]
