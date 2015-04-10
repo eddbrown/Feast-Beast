@@ -26,10 +26,6 @@ before_action :authenticate_user!, :except => [:index, :show]
     redirect_to '/feasts'
   end
 
-  def feast_params
-    params.require(:feast).permit(:name, :address, :description)
-  end
-
   def show
     @feast = Feast.find(params[:id])
   end
@@ -61,5 +57,10 @@ before_action :authenticate_user!, :except => [:index, :show]
     end
     redirect_to '/feasts'
   end
+
+  def feast_params
+    params.require(:feast).permit(:name, :address, :description)
+  end
+
 end
 

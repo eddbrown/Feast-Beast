@@ -3,6 +3,7 @@
 
 <% if @feasts.any? %>
   <% @feasts.each do |feast| %>
+    <h3>Average rating: <%= star_rating(feast.average_rating) %></h3>
     <h2><%= link_to feast.name, feast_path(feast) %></h2>
       <% if user_signed_in? %>
         <%= link_to "Edit #{feast.name}", edit_feast_path(feast) %>
@@ -14,7 +15,7 @@
     <% if feast.reviews.any? %>
       <ul>
         <% feast.reviews.each do |review| %>
-          <li><%= review.thoughts %>, <strong><%= review.rating %></strong>/5</li>
+          <li><%= review.thoughts %>, <%= star_rating(review.rating) %></li>
           <%= link_to "X", feast_review_path(feast,review), method: :delete  %>
         <% end %>
       </ul>
