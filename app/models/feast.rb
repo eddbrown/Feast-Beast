@@ -1,5 +1,6 @@
 class Feast < ActiveRecord::Base
   belongs_to :user
+  has_one :yelp_content
   has_many :reviews, dependent: :destroy
   validates :name, length: {minimum: 3}, uniqueness: true
 

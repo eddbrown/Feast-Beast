@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410115331) do
+ActiveRecord::Schema.define(version: 20150410150211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,12 @@ ActiveRecord::Schema.define(version: 20150410115331) do
     t.string   "business_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "feast_id"
+    t.string   "postcode"
+    t.string   "name"
   end
+
+  add_index "yelp_contents", ["feast_id"], name: "index_yelp_contents_on_feast_id", using: :btree
 
   create_table "yelps", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -89,4 +94,5 @@ ActiveRecord::Schema.define(version: 20150410115331) do
   add_foreign_key "feasts", "users"
   add_foreign_key "reviews", "feasts"
   add_foreign_key "reviews", "users"
+  add_foreign_key "yelp_contents", "feasts"
 end

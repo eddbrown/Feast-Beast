@@ -1,2 +1,0 @@
-class YelpContentController < ApplicationController
-end
