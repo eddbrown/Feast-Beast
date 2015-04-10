@@ -9,7 +9,7 @@
         <%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %>
         <%= link_to "Review #{feast.name}", new_feast_review_path(feast) %>
       <% else %>
-         (log in to leave a review) 
+         (log in to leave a review)
       <% end %>
     <% if feast.reviews.any? %>
       <ul>
