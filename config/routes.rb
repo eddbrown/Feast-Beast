@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :feasts do
     resources :reviews
+    resources :yelp
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
