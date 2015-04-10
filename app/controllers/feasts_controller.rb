@@ -60,7 +60,7 @@ before_action :authenticate_user!, :except => [:index, :show]
   end
 
   def feast_params
-    params.require(:feast).permit(:name, :address, :description)
+    params.require(:feast).permit(:name, :image, :address, :description)
   end
 
 end
