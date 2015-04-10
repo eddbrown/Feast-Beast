@@ -4,6 +4,7 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def index
     @feasts = Feast.all
+    @user = current_user
     @hash = Gmaps4rails.build_markers(@feasts) do |feast, marker|
       marker.lat feast.latitude
       marker.lng feast.longitude
@@ -49,7 +50,7 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def destroy
     @feast = Feast.find(params[:id])
-    if @feast.user_id == current_user.id 
+    if @feast.user_id == current_user.id
       @feast.destroy
       flash[:notice] = "Feast deleted successfully"
     else
