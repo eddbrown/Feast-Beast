@@ -6,7 +6,7 @@ feature 'reviewing' do
   scenario 'allows users to write a review' do
     sign_up
     create_feast
-    create_review
+    leave_review('solid', '3')
     expect(current_path).to eq '/feasts'
     expect(page).to have_content 'solid'
   end
@@ -16,8 +16,8 @@ feature 'reviewing' do
     create_feast
     click_link "Sign out"
     sign_up2
-    create_review
-    create_review2
+    leave_review('solid', '3')
+    leave_review('solid2', '3')
     expect(page).to have_content "solid"
     expect(page).not_to have_content "solid2"
     expect(page).to have_content "You cannot review the same feast more than once"
@@ -26,7 +26,7 @@ feature 'reviewing' do
   scenario 'a user cannot delete someone elses review' do
     sign_up
     create_feast
-    create_review
+    leave_review('solid', '3')
     click_link "Sign out"
     sign_up2
     click_link 'X'
@@ -45,9 +45,19 @@ feature 'reviewing' do
   scenario 'deletes reviews of a deleted feast' do
     sign_up
     create_feast
-    create_review
+    leave_review('solid', '3')
     click_link 'Delete test'
     expect(Review.all.any?).to eq false
+  end
+
+  scenario 'displays an average rating for all reviews' do
+    sign_up
+    create_feast
+    leave_review('solid', '3')
+    click_link "Sign out"
+    sign_up2
+    leave_review('solid2', '5')
+    expect(page).to have_content('Average rating: 4')
   end
 
 

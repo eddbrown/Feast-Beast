@@ -24,16 +24,10 @@ def create_feast
   click_button('Create Feast')
 end
 
-def create_review
-  click_link "Review test"
-  fill_in 'Thoughts', with: 'solid'
-  select '5', from: 'Rating'
-  click_button 'Leave Review'
-end
-
-def create_review2
-  click_link "Review test"
-  fill_in 'Thoughts', with: 'solid2'
-  select '5', from: 'Rating'
+def leave_review(thoughts, rating)
+  visit '/feasts'
+  click_link 'Review test'
+  fill_in 'Thoughts', with: thoughts
+  select rating, from: 'Rating'
   click_button 'Leave Review'
 end

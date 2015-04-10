@@ -16,3 +16,30 @@ describe Feast, type: :model do
   end
 
 end 
+
+describe '#average_rating' do
+  context 'no reviews' do
+    it 'returns "N/A" when there are no reviews' do
+      feast = Feast.create(name: 'The Ivy')
+      expect(feast.average_rating).to eq 'N/A'
+    end
+  end
+
+  context '1 review' do
+  it 'returns that rating' do
+    feast = Feast.create(name: 'The Ivy')
+    feast.reviews.create(rating: 4)
+    expect(feast.average_rating).to eq 4
+  end
+
+  context 'multiple reviews' do
+    it 'returns the average' do
+      feast = Feast.create(name: 'The Ivy')
+      feast.reviews.create(rating: 1)
+      feast.reviews.create(rating: 5)
+      expect(feast.average_rating).to eq 3
+    end
+  end
+end
+
+end
