@@ -58,15 +58,6 @@ feature 'feasts' do
       expect(current_path).to eq '/feasts'
     end
 
-    scenario 'user cannot edit feast that they did not create' do
-      sign_up
-      create_feast
-      click_link "Sign out"
-      sign_up2
-      click_link "Edit test"
-      expect(page).to have_content "You cannot edit this feast"
-    end
-
     scenario 'user does not have edit option if he is not signed in' do
       sign_up
       create_feast
@@ -84,16 +75,6 @@ feature 'feasts' do
       click_link "Delete test"
       expect(page).not_to have_content "test"
       expect(page).to have_content 'Feast deleted successfully'
-    end
-
-    scenario 'cannot remove a feast when a user is not the originator' do
-      sign_up
-      create_feast
-      click_link 'Sign out'
-      sign_up2
-      click_link "Delete test"
-      expect(page).to have_content 'test'
-      expect(page).to have_content 'You cannot delete this feast'
     end
 
     scenario 'user does not have delete option if he is not signed in' do

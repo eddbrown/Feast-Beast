@@ -12,36 +12,34 @@ context "user not signed in and on the homepage" do
     visit('/')
     expect(page).not_to have_link('Sign out')
   end
+
+  it "should not see 'add a feast' link" do
+    visit('/')
+    expect(page).not_to have_link('Add a feast')
+  end
 end
 
 context "user signed in on the homepage" do
 
-  before do
-    visit('/')
-    click_link('Sign up')
-    fill_in('Email', with: 'test@example.com')
-    fill_in('Password', with: 'testtest')
-    fill_in('Password confirmation', with: 'testtest')
-    click_button('Sign up')
-  end
-
   it "should see 'sign out' link" do
+    sign_up
     visit('/')
     expect(page).to have_link('Sign out')
   end
 
   it "should not see a 'sign in' link and a 'sign up' link" do
+    sign_up
     visit('/')
     expect(page).not_to have_link('Sign in')
     expect(page).not_to have_link('Sign up')
   end
-end
 
-context "user adds a feast" do
-  
-  it "should not see 'add a feast' link" do
-    visit('/')
-    expect(page).not_to have_link('Add a feast')
-  end  
-
+  it "should only see edit and delete options for their own feast" do
+    sign_up
+    create_feast
+    click_link "Sign out"
+    sign_up2
+    expect(page).not_to have_link('Edit test')
+    expect(page).not_to have_link('Delete test')
+  end
 end

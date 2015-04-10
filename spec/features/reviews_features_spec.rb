@@ -57,7 +57,7 @@ feature 'reviewing' do
     click_link "Sign out"
     sign_up2
     leave_review('solid2', '5')
-    expect(page).to have_content('Average rating: 4')
+    expect(page).to have_content('Average rating: ★★★★☆')
   end
 
 
