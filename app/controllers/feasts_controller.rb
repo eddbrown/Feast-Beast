@@ -8,7 +8,8 @@ before_action :authenticate_user!, :except => [:index, :show]
     @hash = Gmaps4rails.build_markers(@feasts) do |feast, marker|
       marker.lat feast.latitude
       marker.lng feast.longitude
-      # marker.weight review.rating
+      # marker.json ({ :location => { :D => feast.latitude, :k => feast.longitude} })
+      marker.json ({ :weight => feast.average_rating.to_i })
       marker.infowindow '<h4>'+feast.name+'</h4>' + feast.description
       marker.picture({
         "url" => "http://www.robertgrantstats.co.uk/software/marker-icon-purple.png",

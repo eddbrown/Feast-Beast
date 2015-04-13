@@ -20,7 +20,6 @@ def create_feast
   click_link('Add a feast')
   fill_in('Name', with: 'test')
   fill_in('Description', with: 'test')
-  fill_in('Address', with: 'London')
   click_button('Create Feast')
 end
 
@@ -36,7 +35,6 @@ def create_feast_with_image
   click_link('Add a feast')
   fill_in('Name', with: 'test')
   fill_in('Description', with: 'test')
-  fill_in('Address', with: 'London')
   attach_file 'Image', 'spec/features/image_bank/pic.png'
   click_button('Create Feast')
 end
