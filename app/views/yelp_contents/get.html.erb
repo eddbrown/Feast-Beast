@@ -1,0 +1,7 @@
+<%= @results.businesses.each do |business| %>
+<br> 
+
+<%= link_to business.name, yelp_post_path(@feast, business.id), method: :post  %> 
+<%= business.phone %>
+<% end %>
+

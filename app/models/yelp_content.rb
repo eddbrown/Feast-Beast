@@ -1,4 +1,4 @@
-class YelpContent < ActiveRecord::Base
+class YelpContent
 
 belongs_to :feast
 

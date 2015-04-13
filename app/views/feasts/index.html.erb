@@ -10,7 +10,7 @@
           <%= link_to "Edit #{feast.name}", edit_feast_path(feast) %>
           <%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %>
           No yelp content
-          <%= link_to "Add yelp details", new_feast_yelp_content_path(feast) %> 
+          <%= link_to "Add yelp details", yelp_path(feast)%> 
         <% end %>
         <%= link_to "Review #{feast.name}", new_feast_review_path(feast) %>
       <% else %>
