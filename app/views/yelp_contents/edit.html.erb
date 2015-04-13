@@ -1,4 +1,4 @@
-<%= form_for @yelp_content do |f| %>
+<%= form_for [@feast, @yelp_content] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :postcode %>

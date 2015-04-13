@@ -30,3 +30,9 @@ def leave_review(thoughts, rating)
   select rating, from: 'Rating'
   click_button 'Leave Review'
 end
+
+def query_yelp
+  fill_in 'name', with: 'rextail'
+  fill_in 'postcode', with: 'W1S4HJ'
+  click_button 'Find my feast'
+end
