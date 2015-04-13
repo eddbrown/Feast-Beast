@@ -41,21 +41,13 @@
 </div>
 
 <script type="text/javascript">
-var pointarray, heatmap;
 
 handler = Gmaps.build('Google');
 handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
   markers = handler.addMarkers(<%=raw @hash.to_json %>);
   handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
-
-  pointArray = new google.maps.MVCArray(markers);
-
-  heatmap = new google.maps.visualization.HeatmapLayer({
-    data: pointArray
-  });
-
-  heatmap.setMap(map);
+ 
 });
 
 </script>
