@@ -13,7 +13,7 @@ feature 'feasts' do
 
   context 'feasts have been added' do
     before do
-      Feast.create(name: 'Sushi', description: 'OK', address: 'London')
+      Feast.create(name: 'Sushi', description: 'OK')
     end
 
     scenario 'display feasts' do
@@ -36,7 +36,7 @@ feature 'feasts' do
 
   context 'viewing feast page' do
 
-    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK', address: 'London')}
+    let!(:shawarma){Feast.create(name:'Shawarma', description: 'OK')}
 
     scenario 'user clicks link and is directed to feast page' do
       visit '/feasts'

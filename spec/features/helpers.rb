@@ -20,7 +20,14 @@ def create_feast
   click_link('Add a feast')
   fill_in('Name', with: 'test')
   fill_in('Description', with: 'test')
-  fill_in('Address', with: 'London')
+  click_button('Create Feast')
+end
+
+def create_feast_with_address
+  click_link('Add a feast')
+  fill_in('Name', with: 'test')
+  fill_in('Description', with: 'test')
+  fill_in('Address', with: 'E2 8DP')
   click_button('Create Feast')
 end
 
