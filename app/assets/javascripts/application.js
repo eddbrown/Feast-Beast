@@ -17,7 +17,10 @@
 //= require underscore
 //= require gmaps/google
 
+var lastId = '0';
 
-show_me = function(){
-  $('div#feast-list').slideToggle();
+show_me = function(id){
+  $('div#'+id).slideToggle();
+  if (lastId != id) $('div#'+lastId).slideUp();
+  lastId = id;
 };
