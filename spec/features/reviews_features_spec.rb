@@ -29,7 +29,7 @@ feature 'reviewing' do
     leave_review('solid', '3')
     click_link "Sign out"
     sign_up2
-    click_link 'X'
+    click_link '☓'
     expect(page).to have_content "solid"
     expect(page).to have_content "You cannot delete this review"
   end

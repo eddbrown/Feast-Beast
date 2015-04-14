@@ -16,3 +16,8 @@
 //= require_tree .
 //= require underscore
 //= require gmaps/google
+
+
+show_me = function(){
+  $('div#feast-list').slideToggle();
+};

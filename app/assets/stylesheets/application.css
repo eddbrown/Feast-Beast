@@ -13,3 +13,40 @@
  *= require_tree .
  *= require_self
  */
+html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+
+#feast-list {
+  position: fixed;
+  width: 25%;
+  height: 100%;
+  top: 2;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  z-index: 1;
+  padding: 20px;
+  border-radius: 5px;
+}
+li,a,p,h1,h2,h3 {
+  font-family: 'PT Sans', sans-serif;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hidden {
+  display: none;
+}

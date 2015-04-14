@@ -1,52 +1,146 @@
-<script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
+<!-- <script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script> -->
 <script src='//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js' type='text/javascript'></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
 
-<% if @feasts.any? %>
-  <% @feasts.each do |feast| %>
-    <% if feast.image? %>
-      <%= image_tag feast.image.url(:thumb) %>
-    <% end %>
-    <h2><%= link_to feast.name, feast_path(feast) %></h2>
-    <h3>Average rating: <%= star_rating(feast.average_rating) %></h3>
-      <% if user_signed_in? %>
-        <% if feast.user_id == @user.id %>
-          <%= link_to "Edit #{feast.name}", edit_feast_path(feast) %>
-          <%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %>
-        <% end %>
-          <%= link_to "Review #{feast.name}", new_feast_review_path(feast) %>
-      <% else %>
-         (log in to leave a review)
+<div id='feast-list' class='hidden'>
+  <% if @feasts.any? %>
+    <% @feasts.each do |feast| %>
+      <% if feast.image? %>
+        <%= image_tag feast.image.url(:thumb) %>
       <% end %>
-    <% if feast.reviews.any? %>
-      <ul>
-        <% feast.reviews.each do |review| %>
-          <li><%= review.thoughts %>, <%= star_rating(review.rating) %></li>
-          <%= link_to "X", feast_review_path(feast,review), method: :delete  %>
+      <h2><%= link_to feast.name, feast_path(feast) %></h2>
+      <% if feast.reviews.any? %>
+        <h3>Average rating: <%= star_rating(feast.average_rating) %></h3>
+      <% else %>
+        <h3>Average rating: No ratings yet </h3>
+      <% end %>
+        <% if user_signed_in? %>
+          <% if feast.user_id == @user.id %>
+            <%= link_to "Edit #{feast.name}", edit_feast_path(feast) %>
+            <%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %>
+          <% end %>
+            <%= link_to "Review #{feast.name}", new_feast_review_path(feast) %>
+        <% else %>
+           (log in to leave a review)
         <% end %>
-      </ul>
-    <% else %>
-      <p>No Reviews.</p>
+      <% if feast.reviews.any? %>
+        <ul>
+          <% feast.reviews.each do |review| %>
+            <li><%= review.thoughts %> <%= star_rating(review.rating) %><%= link_to "☓", feast_review_path(feast,review), method: :delete  %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No Reviews.</p>
+      <% end %>
     <% end %>
+  <% else %>
+    <h1>No feasts yet</h1>
   <% end %>
-<% else %>
-  <h1>No feasts yet</h1>
-<% end %>
+</div>
 
 <% if user_signed_in? %>
   <a href='feasts/new'>Add a feast</a>
 <% end %>
 
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
-</div>
-
 <script type="text/javascript">
 
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
+var map, pointarray, heatmap;
+
+var markers = [];
+
+
+function initialize() {
+  console.log(markers);
+  var mapOptions = {
+    zoom: 13,
+    center: new google.maps.LatLng(51.5073509, -0.1277583),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
+
+  map.setOptions({styles: styles});
+
+  var pointArray = new google.maps.MVCArray(markers);
+
+  heatmap = new google.maps.visualization.HeatmapLayer({
+    data: pointArray
+  });
+
+  heatmap.setMap(map);
+
+  <% @feasts.each do |feast| %>
+    var myLatlng = new google.maps.LatLng( <%= feast.latitude.to_f %> , <%= feast.longitude.to_f %> )
+    markers.push({location: myLatlng,
+                  weight: <%= feast.average_rating.to_i %>});
+
+    var contentString = "<a href='#'> <%=feast.name%> </a>";
+    console.log(contentString);
+    var infowindow = new google.maps.InfoWindow({
+    content: contentString
+    });
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+    });
+    google.maps.event.addListener(marker,'click', (function(marker,contentString,infowindow){
+        return function() {
+            infowindow.setContent(contentString);
+            infowindow.open(map,marker);
+            show_me();
+        };
+    })(marker,contentString,infowindow));
+    heatmap.set('radius', heatmap.get('radius') ? null : 20);
+  <% end %>
+}
+
+function toggleHeatmap() {
+  heatmap.setMap(heatmap.getMap() ? null : map);
+}
+
+function changeGradient() {
+  var gradient = [
+    'rgba(0, 255, 255, 0)',
+    'rgba(0, 255, 255, 1)',
+    'rgba(0, 191, 255, 1)',
+    'rgba(0, 127, 255, 1)',
+    'rgba(0, 63, 255, 1)',
+    'rgba(0, 0, 255, 1)',
+    'rgba(0, 0, 223, 1)',
+    'rgba(0, 0, 191, 1)',
+    'rgba(0, 0, 159, 1)',
+    'rgba(0, 0, 127, 1)',
+    'rgba(63, 0, 91, 1)',
+    'rgba(127, 0, 63, 1)',
+    'rgba(191, 0, 31, 1)',
+    'rgba(255, 0, 0, 1)'
+  ]
+  heatmap.set('gradient', heatmap.get('gradient') ? null : gradient);
+}
+
+function changeRadius() {
+  heatmap.set('radius', heatmap.get('radius') ? null : 20);
+}
+
+function changeOpacity() {
+  heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
+<html>
+  <body>
+    <div id="panel">
+      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+      <button onclick="changeGradient()">Change gradient</button>
+      <button onclick="changeRadius()">Change radius</button>
+      <button onclick="changeOpacity()">Change opacity</button>
+    </div>
+    <div id="map-canvas"></div>
+  </body>
+</html>
