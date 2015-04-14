@@ -85,6 +85,14 @@ feature 'feasts' do
     end
   end
 
+  context 'images' do
+    scenario 'user uploads an image' do
+      sign_up
+      create_feast_with_image
+      expect(page).to have_css("img")
+    end
+  end
+
 
 
 end
