@@ -23,19 +23,11 @@ feature 'yelp' do
 
   context 'adding yelp content' do
 
-    scenario 'user is asked for name and postcode when adding yelp content' do
+    scenario 'user is asked to select his business from list' do
       sign_up
-      create_feast
+      create_feast_with_address
       click_link 'Add yelp details'
-      expect(page).not_to have_content 'postcode'
-      expect(page).not_to have_content 'name'
-      expect(page).not_to have_link 'Find my feast'
-    end
-
-    scenario 'user is given 5 options to select his own business' do
-      sign_up
-      create_feast
-      query_yelp
+      expect(page).to have_content 'Select your business from the list'
     end
 
   end

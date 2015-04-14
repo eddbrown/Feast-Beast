@@ -1,7 +1,9 @@
-<%= @results.businesses.each do |business| %>
+Select your business from the list:
 <br> 
-
-<%= link_to business.name, yelp_post_path(@feast, business.id), method: :post  %> 
-<%= business.phone %>
+<% [*0...@results.businesses.count].each do |index| %>
+  <br>
+  <%= link_to @results.businesses[index].name, yelp_post_path(@feast, @results.businesses[index].id), method: :post  %> 
+  <%= @results.businesses[index].phone %>
 <% end %>
+
 
