@@ -51,7 +51,6 @@
 <% end %>
 
 <script type="text/javascript">
-
 var map, pointarray, heatmap;
 
 var markers = [];
@@ -90,13 +89,12 @@ function initialize() {
         map: map,
         markerID: <%= feast.id %>
     });
-    google.maps.event.addListener(marker,'click', (function(marker){
+    google.maps.event.addListener(marker,'mouseover', (function(marker){
         return function() {
             show_me("<%= feast.id %>");
             map.setCenter(marker.getPosition());
         };
     })(marker));
-    heatmap.set('radius', heatmap.get('radius') ? null : 20);
   <% end %>
 }
 
