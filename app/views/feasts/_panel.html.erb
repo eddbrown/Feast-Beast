@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <div id="panel">
+      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
+      <button onclick="changeGradient()">Change gradient</button>
+      <button onclick="changeRadius()">Change radius</button>
+      <button onclick="showDay()">Day Theme</button>
+      <button onclick="showNight()">Night Theme</button>
+      <button onclick="showZombie()">Zombie Theme</button>
+
+      <% if user_signed_in? %>
+        <button onclick="window.location.href='/feasts/new'">Add a feast</button>
+      <% end %>
+
+      <% if user_signed_in? %>
+        <button><%= link_to "Sign out", destroy_user_session_path, method: :delete %></button>
+      <% else %>
+        <%= button_to "Sign in", new_user_session_path %>
+        <%= button_to "Sign up", new_user_registration_path %>
+      <% end %>
+
+    </div>
+    <div id="map-canvas"></div>
+  </body>
+</html>
