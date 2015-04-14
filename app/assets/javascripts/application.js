@@ -24,3 +24,11 @@ show_me = function(id){
   if (lastId != id) $('div#'+lastId).slideUp();
   lastId = id;
 };
+
+$(document).ready(function() {
+setTimeout(function(){
+    $("#overlay").fadeOut(5000);
+},3000)
+
+})
+

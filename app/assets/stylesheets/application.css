@@ -14,20 +14,20 @@
  *= require_self
  */
 html, body, #map-canvas {
-        height: 100%;
-        margin: 0px;
-        padding: 0px
-      }
-      #panel {
-        position: absolute;
-        top: 5px;
-        left: 50%;
-        margin-left: -180px;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-      }
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+#panel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
 
 .feast-list {
   position: fixed;
@@ -49,4 +49,21 @@ li,a,p,h1,h2,h3 {
 
 .hidden {
   display: none;
+}
+
+#overlay{
+  height:100%;
+  width:100%;
+  position:fixed;
+  left:0;
+  top:0;
+  z-index: 1000;
+  background-color:black;
+}
+
+.title {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 100px;
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
 }
