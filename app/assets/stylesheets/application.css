@@ -29,7 +29,7 @@ html, body, #map-canvas {
         border: 1px solid #999;
       }
 
-#feast-list {
+.feast-list {
   position: fixed;
   width: 25%;
   height: 100%;
