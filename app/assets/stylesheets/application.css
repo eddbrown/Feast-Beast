@@ -22,7 +22,7 @@ html, body, #map-canvas {
   position: absolute;
   top: 5px;
   left: 50%;
-  margin-left: -180px;
+  margin-left: -350px;
   z-index: 5;
   background-color: #fff;
   padding: 5px;
@@ -61,7 +61,7 @@ li,a,p,h1,h2,h3 {
   background-color:black;
 }
 
-.title {
+#overlay h4 {
   color: rgba(255, 255, 255, 0.5);
   font-size: 100px;
   text-align: center;

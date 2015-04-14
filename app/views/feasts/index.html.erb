@@ -3,14 +3,9 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
 
 <%= render "feasts" %>
-
-<% if user_signed_in? %>
-  <a href='feasts/new'>Add a feast</a>
-<% end %>
-
 <%= render "googlemaps" %>
 <%= render "panel" %>
 
 <section id="overlay">
-  <p class"title">FEASTBEAST<p>
+  <h4>FEASTBEAST<h4>
 </section>

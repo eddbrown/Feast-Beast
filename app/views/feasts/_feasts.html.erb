@@ -29,7 +29,7 @@
       <% if feast.reviews.any? %>
         <ul>
           <% feast.reviews.each do |review| %>
-            <li><%= review.thoughts %> <%= star_rating(review.rating) %><%= link_to "☓", feast_review_path(feast,review), method: :delete  %></li>
+            <li><%= review.thoughts %> <%= star_rating(review.rating) %><%= %><%= link_to "☓", feast_review_path(feast,review), method: :delete  %></li>
           <% end %>
         </ul>
       <% else %>
