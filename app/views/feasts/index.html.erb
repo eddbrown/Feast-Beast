@@ -88,6 +88,7 @@ function initialize() {
         map: map,
         markerID: <%= feast.id %>
     });
+
     google.maps.event.addListener(marker,'mouseover', (function(marker){
         return function() {
             show_me("<%= feast.id %>");
