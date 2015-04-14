@@ -29,6 +29,7 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def show
     @feast = Feast.find(params[:id])
+    @result = Yelp.client.business(@feast.yelp_id)
   end
 
   def edit
