@@ -19,6 +19,17 @@
 
 <% end %>
 
+<% if !@feast.twitter_id.nil? %>
+What we're saying:<br>
+  <% 5.times do |x| %>
+    <%= @feast_tweet[x] %><br>
+  <% end %>
+
+What our customers are saying:<br>  
+  <% 5.times do |x| %>
+    <%= @client_tweet[x] %><br>
+  <% end %>
+<% end %>
 
 
 <% if @feast.reviews.any? %>

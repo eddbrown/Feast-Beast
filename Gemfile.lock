@@ -36,10 +36,12 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    addressable (2.3.8)
     arel (6.0.0)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    buftok (0.2.0)
     builder (3.2.2)
     byebug (4.0.5)
       columnize (= 0.9.0)
@@ -70,6 +72,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
+    equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.5.0)
     faraday (0.9.1)
@@ -82,7 +85,15 @@ GEM
     gmaps4rails (2.1.2)
     hashie (3.4.1)
     hike (1.2.3)
+    http (0.6.4)
+      http_parser.rb (~> 0.6.0)
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
+    instagram (1.1.5)
+      faraday (>= 0.7, < 0.10)
+      faraday_middleware (>= 0.8, < 0.10)
+      hashie (>= 0.4.0)
+      multi_json (~> 1.0, >= 1.0.3)
     jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -96,12 +107,15 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.11.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    naught (1.0.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     oauth2 (1.0.0)
@@ -210,6 +224,17 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
+    twitter (5.11.0)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (~> 0.0.9)
+      faraday (~> 0.9.0)
+      http (~> 0.6.0)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.2.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.1)
@@ -239,6 +264,7 @@ DEPENDENCIES
   devise
   geocoder
   gmaps4rails
+  instagram
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-facebook
@@ -252,6 +278,7 @@ DEPENDENCIES
   shoulda
   spring
   turbolinks
+  twitter
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
   yelp

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   # Example of regular route:
      get 'feasts/:id/yelp' => 'yelp_contents#get', as: :yelp
      post 'feasts/:id/yelp/:yelp_id' => 'yelp_contents#post', as: :yelp_post
+     get 'feasts/:id/instagram' => 'instagrams#get', as: :instagram
+     post 'feasts/:id/instagram/:instagram_id' => 'instagrams#post', as: :instagram_post
 
   # Example of named route that can be invoked withinh purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -30,6 +30,9 @@ before_action :authenticate_user!, :except => [:index, :show]
   def show
     @feast = Feast.find(params[:id])
     @result = Yelp.client.business(@feast.yelp_id)
+    #@instagram =
+    @feast_tweet = @feast.feast_tweets(@feast.twitter_id)
+    @client_tweet = @feast.client_tweets(@feast.twitter_id)
   end
 
   def edit
@@ -45,7 +48,6 @@ before_action :authenticate_user!, :except => [:index, :show]
   def update
     @feast = Feast.find(params[:id])
     @feast.update(feast_params)
-
     redirect_to '/feasts'
   end
 
@@ -61,8 +63,10 @@ before_action :authenticate_user!, :except => [:index, :show]
   end
 
   def feast_params
-    params.require(:feast).permit(:name, :image, :address, :description)
+    params.require(:feast).permit(:name, :image, :address, :description, :twitter_id, :instagram_user)
   end
+
+
 
 end
 

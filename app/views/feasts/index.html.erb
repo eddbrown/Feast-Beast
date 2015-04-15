@@ -17,7 +17,11 @@
           <% else %>
             Yelp content linked
           <% end %>
-          <%= link_to "Add yelp details", yelp_path(feast)%> 
+          <%= link_to "Add yelp details", yelp_path(feast)%>
+          <% if !feast.instagram_user.nil? %> 
+            <%= link_to "Confirm instagram account", instagram_path(feast)%>
+          <% end %> 
+             
         <% end %>
           <%= link_to "Review #{feast.name}", new_feast_review_path(feast) %>
       <% else %>

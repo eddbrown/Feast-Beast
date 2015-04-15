@@ -1,0 +1,4 @@
+  Please confirm this is your instagram profile:
+  <br> 
+  <%= @instagram_result.first.profile_picture %>
+  <%= link_to @instagram_result.first.username, instagram_post_path(@feast, @instagram_result.first.id), method: :post  %> 
