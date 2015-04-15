@@ -1,12 +1,9 @@
 <html>
   <body>
     <div id="panel">
-      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button onclick="changeGradient()">Change gradient</button>
-      <button onclick="changeRadius()">Change radius</button>
-      <button onclick="showDay()">Day Theme</button>
-      <button onclick="showNight()">Night Theme</button>
-      <button onclick="showZombie()">Zombie Theme</button>
+      <a href='#' class='button' onclick="showDay()">DAY</a>
+      <a href='#' class='button' onclick="showNight()">NIGHT</a>
+      <a href='#' class='button' onclick="showZombie()">ZOMBIE</a>
 
       <% if user_signed_in? %>
         <button onclick="window.location.href='/feasts/new'">Add a feast</button>
@@ -15,8 +12,8 @@
       <% if user_signed_in? %>
         <button><%= link_to "Sign out", destroy_user_session_path, method: :delete %></button>
       <% else %>
-        <%= button_to "Sign in", new_user_session_path %>
-        <%= button_to "Sign up", new_user_registration_path %>
+        <button><%= link_to "Sign in", new_user_session_path %></button>
+        <button><%= link_to "Sign up", new_user_registration_path %></button>
       <% end %>
 
     </div>

@@ -10,15 +10,16 @@ class Feast < ActiveRecord::Base
     new_review = reviews.build(params)
     new_review.user = user
     new_review.save
-    new_review 
+    new_review
   end
 
   def average_rating
     return 'N/A' if reviews.none?
-    reviews.average(:rating)
+    return reviews.average(:rating) if result.none?
+    return reviews.average
   end
-  
+
   geocoded_by :address
   after_validation :geocode
-  
+
 end

@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+
 html, body, #map-canvas {
   height: 100%;
   margin: 0px;
@@ -22,9 +24,9 @@ html, body, #map-canvas {
   position: absolute;
   top: 5px;
   left: 50%;
-  margin-left: -350px;
+  margin-left: -200px;
   z-index: 5;
-  background-color: #fff;
+  background-color: black;
   padding: 5px;
   border: 1px solid #999;
 }
@@ -66,4 +68,19 @@ li,a,p,h1,h2,h3 {
   font-size: 100px;
   text-align: center;
   font-family: 'PT Sans', sans-serif;
+}
+
+a.button {
+  font-family: 'PT Sans', sans-serif;
+  display:inline-block; /* diplay inline but have dimensions */
+  width: 80px;
+  background-color: black;
+  border: 3px solid white;
+  color: white; /* text colour */
+  text-decoration: none; /* no underlining */
+  padding: 6px 10px;
+  text-align: center;
+  border-radius: 4px; /* rounded corners */
+  margin: 5px 5px;
+  text-shadow: 0 0 0px rgba(0,0,0, 0.4); /* for readability */
 }
