@@ -33,8 +33,8 @@ show_me = function(id){
 
 $(document).ready(function() {
 setTimeout(function(){
-    $("#overlay").fadeOut(0);
-},0)
+    $("#overlay").fadeOut(3000);
+},3000)
 
 });
 
