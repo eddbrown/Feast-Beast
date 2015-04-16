@@ -7,7 +7,11 @@
       <%= image_tag feast.image.url(:thumb) %>
     <% end %>
     <h2><%= link_to feast.name, feast_path(feast) %></h2>
-    <h3>Average rating: <%= star_rating(feast.average_rating) %></h3>
+    <% if feast.reviews.any? %>
+      <h3>Average rating: <%= star_rating(feast.average_rating) %></h3>
+    <% else %>
+      <h3>Average rating: No ratings yet </h3>
+    <% end %>
       <% if user_signed_in? %>
         <% if feast.user_id == @user.id %>
           <%= link_to "Edit #{feast.name}", edit_feast_path(feast) %>
@@ -30,8 +34,7 @@
     <% if feast.reviews.any? %>
       <ul>
         <% feast.reviews.each do |review| %>
-          <li><%= review.thoughts %>, <%= star_rating(review.rating) %></li>
-          <%= link_to "X", feast_review_path(feast,review), method: :delete  %>
+          <li><%= review.thoughts %> <%= star_rating(review.rating) %><%= link_to "☓", feast_review_path(feast,review), method: :delete  %></li>
         <% end %>
       </ul>
     <% else %>
