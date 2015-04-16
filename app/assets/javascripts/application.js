@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require underscore
-//= require gmaps/google
+
 
   var nightStyle = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
 
@@ -32,10 +32,9 @@ show_me = function(id){
 };
 
 $(document).ready(function() {
-setTimeout(function(){
-    $("#overlay").fadeOut(3000);
-},3000)
-
+  setTimeout(function(){
+      $("#overlay").fadeOut(0);
+  },0)
 });
 
 showNight = function(){
@@ -49,3 +48,21 @@ showDay = function(){
 showZombie = function(){
   map.setOptions({styles: zombieStyle});
 };
+
+showMarkers = function(type){
+  for (var i=0; i<markers.length; i++) {
+    console.log(markers[i].category);
+    if (markers[i].category == type){
+      markers[i].setVisible(true);
+    }
+  }
+};
+
+hideMarkers = function(type){
+  for (var i=0; i<markers.length; i++) {
+    if (markers[i].category == type){
+      markers[i].setVisible(false);
+    }
+  }
+};
+

@@ -5,17 +5,6 @@ before_action :authenticate_user!, :except => [:index, :show]
   def index
     @feasts = Feast.all
     @user = current_user
-    @hash = Gmaps4rails.build_markers(@feasts) do |feast, marker|
-      marker.lat feast.latitude
-      marker.lng feast.longitude
-      # marker.json ({ :location => { :D => feast.latitude, :k => feast.longitude} })
-      marker.json ({ :weight => feast.average_rating.to_i })
-      marker.infowindow '<h4>'+feast.name+'</h4>' + feast.description
-      marker.picture({
-        "url" => "http://www.robertgrantstats.co.uk/software/marker-icon-purple.png",
-        "width" => 26,
-        "height" => 42})
-    end
   end
 
   def new
@@ -62,7 +51,7 @@ before_action :authenticate_user!, :except => [:index, :show]
   end
 
   def feast_params
-    params.require(:feast).permit(:name, :image, :address, :description)
+    params.require(:feast).permit(:name, :image, :address, :description, :icon, :category)
   end
 
 end

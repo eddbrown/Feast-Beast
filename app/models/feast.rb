@@ -15,8 +15,9 @@ class Feast < ActiveRecord::Base
 
   def average_rating
     return 'N/A' if reviews.none?
-    return reviews.average(:rating) if result.none?
-    return reviews.average
+    return reviews.average(:rating)
+    # return reviews.average(:rating) if feast.yelp_id.nil?
+    # return ((reviews.average(:rating)*reviews.count)+(result.rating*result.review_count))/(reviews.count+result.review_count)
   end
 
   geocoded_by :address

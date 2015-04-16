@@ -1,10 +1,19 @@
 <script type="text/javascript">
 var map, pointarray, heatmap;
 var markers = [];
+var zombieMarkers = [];
+var icons ={
+      food: { icon: 'http://www.familyvacationhub.com/wp-content/uploads/leaflet-maps-marker-icons/fast-food.png'},
+      volcano: { icon: 'http://maps.google.com/mapfiles/kml/shapes/volcano.png'},
+      caution: { icon: 'http://maps.google.com/mapfiles/kml/shapes/caution.png'},
+      fire: { icon: 'http://maps.google.com/mapfiles/kml/shapes/firedept.png'},
+      mountain: { icon: 'http://maps.google.com/mapfiles/kml/shapes/mountains.png'},
+      airport: { icon: 'http://maps.google.com/mapfiles/kml/shapes/airports.png'},
+      zombie: { icon: 'http://a.deviantart.net/avatars/z/o/zombie-astronaut.gif?4'}
+    };
 
 
 function initialize() {
-  console.log(markers);
   var mapOptions = {
     zoom: 13,
     center: new google.maps.LatLng(51.5073509, -0.1277583),
@@ -14,9 +23,7 @@ function initialize() {
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
-
-
-  map.setOptions({styles: dayStyle});
+  map.setOptions({styles: nightStyle});
 
   var pointArray = new google.maps.MVCArray(markers);
 
@@ -27,16 +34,16 @@ function initialize() {
   heatmap.setMap(map);
 
   <% @feasts.each do |feast| %>
-    var myLatlng = new google.maps.LatLng( <%= feast.latitude.to_f %> , <%= feast.longitude.to_f %> )
-    markers.push({location: myLatlng,
-                  weight: <%= feast.average_rating.to_i %>});
-
+    var myLatlng = new google.maps.LatLng( <%= feast.latitude.to_f %> , <%= feast.longitude.to_f %> );
     var marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
-        markerID: <%= feast.id %>
+        markerID: <%= feast.id %>,
+        icon: icons['<%= feast.icon %>'].icon
     });
-
+    marker.category = '<%= feast.category %>';
+    markers.push({location: myLatlng,
+                  weight: <%= feast.average_rating.to_i %>});
     google.maps.event.addListener(marker,'click', (function(marker){
         return function() {
             show_me("<%= feast.id %>");

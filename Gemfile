@@ -55,5 +55,5 @@ group :test do
 end
 
 gem 'geocoder'
-gem 'gmaps4rails'
 gem 'paperclip'
+gem 'gmaps4rails'
