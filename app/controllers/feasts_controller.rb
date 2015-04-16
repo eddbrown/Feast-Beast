@@ -19,10 +19,10 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def show
     @feast = Feast.find(params[:id])
-    @result = Yelp.client.business(@feast.yelp_id)
-    @instagram = Instagram.user_recent_media(@feast.instagram_id, {:count => 10})
-    @feast_tweet = @feast.feast_tweets(@feast.twitter_id)
-    @client_tweet = @feast.client_tweets(@feast.twitter_id)
+    !@feast.yelp_id.nil? ? @result = Yelp.client.business(@feast.yelp_id) : nil
+    !@feast.instagram_id.nil? ? @instagram = Instagram.user_recent_media(@feast.instagram_id, {:count => 10}) : nil
+    !@feast.twitter_id.nil? ?  @feast_tweet = @feast.feast_tweets(@feast.twitter_id) : nil
+    !@feast.twitter_id.nil? ?  @client_tweet = @feast.client_tweets(@feast.twitter_id) : nil
   end
 
   def edit
