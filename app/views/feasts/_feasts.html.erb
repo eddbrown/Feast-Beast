@@ -16,21 +16,21 @@
     <% end %>
       <% if user_signed_in? %>
         <% if feast.user_id == @user.id %>
-          <p><%= link_to "Edit #{feast.name}", edit_feast_path(feast) %></p>
-          <p><%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %></p>
+          <p class='button'><%= link_to "Edit #{feast.name}", edit_feast_path(feast) %></p>
+          <p class='button'><%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %></p>
 
           <% if feast.yelp_id.nil? %>
             No yelp content
           <% else %>
             Yelp content linked
           <% end %>
-          <%= link_to "Add yelp details", yelp_path(feast)%>
+          <p class='button'><%= link_to "Add yelp details", yelp_path(feast)%><p>
           <% if !feast.instagram_user.nil? %>
-            <%= link_to "Confirm instagram account", instagram_path(feast)%>
+            <p class='button'><%= link_to "Confirm instagram account", instagram_path(feast)%></p>
           <% end %>
 
         <% end %>
-        <p><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
+        <p class='button'><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
       <% else %>
         (log in to leave a review)
       <% end %>

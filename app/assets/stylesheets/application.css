@@ -70,7 +70,7 @@ li,a,p,h1,h2,h3 {
   font-family: 'PT Sans', sans-serif;
 }
 
-a.button {
+.button {
   font-family: 'PT Sans', sans-serif;
   display:inline-block; /* diplay inline but have dimensions */
   width: 80px;
