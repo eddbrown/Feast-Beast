@@ -20,6 +20,7 @@
 <% end %>
 
 <% if !@feast.twitter_id.nil? %>
+Twitter
 What we're saying:<br>
   <% 5.times do |x| %>
     <%= @feast_tweet[x] %><br>
@@ -28,6 +29,19 @@ What we're saying:<br>
 What our customers are saying:<br>  
   <% 5.times do |x| %>
     <%= @client_tweet[x] %><br>
+  <% end %>
+<% end %>
+
+<% if !@feast.instagram_id.nil? %>
+Instagram feed:
+  <% @instagram.each do |post| %>
+  <br>
+    <%= post.images.thumbnail.url %>
+  <br>
+    <%= post.images.standard_resolution.url %>
+  <br>
+    <%= post.caption.text %>
+  <br>
   <% end %>
 <% end %>
 
