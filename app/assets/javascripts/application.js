@@ -39,19 +39,39 @@ $(document).ready(function() {
 
 showNight = function(){
   map.setOptions({styles: nightStyle});
+  showMarkers('Dinner');
+  hideMarkers('Lunch');
+  hideMarkers('Zombie');
+  heatmapOff();
+  buildPointArray(markers.map(filterDinner));
+  heatmap.set('radius', 50);
+  heatmap.set('gradient', null);
 };
 
 showDay = function(){
   map.setOptions({styles: dayStyle});
+  showMarkers('Lunch');
+  hideMarkers('Dinner');
+  hideMarkers('Zombie');
+  heatmapOff();
+  buildPointArray(markers.map(filterLunch));
+  heatmap.set('radius', 50);
+  heatmap.set('gradient', null);
 };
 
 showZombie = function(){
   map.setOptions({styles: zombieStyle});
+  showMarkers('Zombie');
+  hideMarkers('Dinner');
+  hideMarkers('Lunch');
+  heatmapOff();
+  buildPointArray(markers.map(filterZombie));
+  heatmap.set('radius', 80);
+  blueGradient();
 };
 
 showMarkers = function(type){
   for (var i=0; i<markers.length; i++) {
-    console.log(markers[i].category);
     if (markers[i].category == type){
       markers[i].setVisible(true);
     }
