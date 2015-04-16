@@ -18,12 +18,17 @@
         <% if feast.user_id == @user.id %>
           <p><%= link_to "Edit #{feast.name}", edit_feast_path(feast) %></p>
           <p><%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %></p>
-          <span><%= link_to "Add yelp details", yelp_path(feast)%></span>
-          <% if feast.yelp_id.nil? %>
-            <span>(No yelp content linked yet)</span>
+
+          <% if feast.yelp_id.nil? %> 
+            No yelp content
           <% else %>
-            <span>(Yelp content linked)</span>
+            Yelp content linked
           <% end %>
+          <%= link_to "Add yelp details", yelp_path(feast)%>
+          <% if !feast.instagram_user.nil? %> 
+            <%= link_to "Confirm instagram account", instagram_path(feast)%>
+          <% end %>
+
         <% end %>
         <p><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
       <% else %>
@@ -46,3 +51,4 @@
     <h1>No feasts yet</h1>
   <% end %>
 </div>
+

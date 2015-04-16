@@ -19,7 +19,10 @@ before_action :authenticate_user!, :except => [:index, :show]
 
   def show
     @feast = Feast.find(params[:id])
-    @result = Yelp.client.business(@feast.yelp_id)
+    !@feast.yelp_id.nil? ? @result = Yelp.client.business(@feast.yelp_id) : nil
+    !@feast.instagram_id.nil? ? @instagram = Instagram.user_recent_media(@feast.instagram_id, {:count => 10}) : nil
+    !@feast.twitter_id.nil? ?  @feast_tweet = @feast.feast_tweets(@feast.twitter_id) : nil
+    !@feast.twitter_id.nil? ?  @client_tweet = @feast.client_tweets(@feast.twitter_id) : nil
   end
 
   def edit
@@ -35,7 +38,6 @@ before_action :authenticate_user!, :except => [:index, :show]
   def update
     @feast = Feast.find(params[:id])
     @feast.update(feast_params)
-
     redirect_to '/feasts'
   end
 
@@ -51,8 +53,10 @@ before_action :authenticate_user!, :except => [:index, :show]
   end
 
   def feast_params
-    params.require(:feast).permit(:name, :image, :address, :description, :icon, :category)
+    params.require(:feast).permit(:name, :image, :address, :description,  :twitter_id, :instagram_user, :icon, :category)
   end
+
+
 
 end
 

@@ -1,27 +1,4 @@
 
-<% if @feast.yelp_id.nil? %>
-
-  <p><%= @feast.name %></p>
-  <p><%= @feast.description %></p>
-  <p><%= @feast.address %></p>
-
-<% else %>
-
-  <p><%= @result.name %></p>
-  <p>Yelp rating: <%= @result.rating %>
-  (from <%= @result.review_count %> reviews)</p>
-  <p><%= @result.rating_img_url %></p>
-  <p><%= @result.snippet_text%></p>
-  <p><%= @result.location.display_address[1] %></p>
-  <p><%= @result.location.display_address[2] %></p>
-  <p><%= @result.url %></p>
-  <p><%= @result.image_url %></p>
-  <p><%= @result.snippet_image_url %></p>
-
-<% end %>
-
-
-
 <% if @feast.reviews.any? %>
 <ul>
   <% @feast.reviews.each do |review| %>
@@ -32,16 +9,3 @@
   <p>No Reviews.</p>
 <% end %>
 
-<% if !@feast.yelp_id.nil? %>
-
-  <p> Yelp Reviews: </p>
-
-  <% @result.reviews.each do |review| %>
-    <br>
-    <%= review.rating %>
-    <%= review.rating_image_small_url %>
-    <%= review.excerpt %>
-  <% end %>
-
-
-<% end %>

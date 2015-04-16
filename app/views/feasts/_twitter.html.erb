@@ -1,0 +1,15 @@
+<% if !@feast.twitter_id.empty? %>
+
+Twitter
+
+What we're saying:<br>
+  <% 5.times do |x| %>
+    <%= @feast_tweet[x] %><br>
+  <% end %>
+
+What our customers are saying:<br>  
+  <% 5.times do |x| %>
+    <%= @client_tweet[x] %><br>
+  <% end %>
+
+<% end %>

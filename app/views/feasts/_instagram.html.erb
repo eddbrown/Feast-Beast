@@ -1,0 +1,14 @@
+<% if !@feast.instagram_id.nil? %>
+
+  Instagram feed:
+  <% @instagram.each do |post| %>
+  <br>
+    <%= post.images.thumbnail.url %>
+  <br>
+    <%= post.images.standard_resolution.url %>
+  <br>
+    <%= post.caption.text %>
+  <br>
+  <% end %>
+
+<% end %>
