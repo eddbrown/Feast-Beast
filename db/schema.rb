@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150415154950) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -34,6 +35,9 @@ ActiveRecord::Schema.define(version: 20150415154950) do
     t.string   "type"
     t.string   "icon"
     t.string   "category"
+    t.string   "twitter_id"
+    t.integer  "instagram_id"
+    t.string   "instagram_user"
   end
 
   add_index "feasts", ["user_id"], name: "index_feasts_on_user_id", using: :btree
