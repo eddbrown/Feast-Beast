@@ -2,30 +2,42 @@
   <% if @feasts.any? %>
     <% @feasts.each do |feast| %>
       <div id='<%= feast.id %>' class='hidden feast-list' style="overflow-y: scroll; height:100%;">
-        
+        <div class = "admin">
           <% if user_signed_in? %>
           <% if feast.user_id == @user.id %>
-            <p><%= link_to "Edit #{feast.name}", edit_feast_path(feast) %></p>
-            <p><%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %></p>
-
-            <% if feast.yelp_id.nil? %> 
-              No yelp content
-            <% else %>
-              Yelp content linked
-            <% end %>
-            <%= link_to "Add yelp details", yelp_path(feast)%>
+            <a class = "small_button" href = <%= edit_feast_path(feast)%> > Edit </a>
+            <a class = "small_button" href = <%= yelp_path(feast)%> > Add/Edit Yelp </a>
+            
             <% if !feast.instagram_user.nil? %> 
-              <%= link_to "Confirm instagram account", instagram_path(feast)%>
+              <a class = "small_button" href= <%=instagram_path(feast)%> > Confirm Instagram </a>
             <% end %>
-
+            <small><%= link_to "Delete", feast_path(feast), method: :delete %>
+            <% if feast.yelp_id.nil? %> 
+              <a>Yelp status: not linked / </a>
+            <% else %>
+              <a>Yelp status: linked / </a>
+            <% end %>
+            
+            <% if feast.instagram_id.nil? %>
+            <a>Instagram status: not linked </a>
+            <% else %>
+              <a>Instagram status: linked</a>
+            <% end %> </small>
+            
           <% end %>
-          
+        </div>  
         <% else %>
           (log in to leave a review)
         <% end %>
 
+        
+        <div class='yelp'>
+
+
         <% if feast.yelp_id.nil? %>
 
+          <h3>Overall rating: </h3>
+          <h1><%= star_rating(feast.average_rating) %></h1>
           <p><%= feast.name %></p>
           <p><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
           <p><%= feast.description %></p>
@@ -37,6 +49,9 @@
         <% else %>
 
           <% result = Yelp.client.business(feast.yelp_id) %>
+          <h3>Overall rating: </h3>
+          <% our_rating = (feast.average_rating == 'N/A' ? result.rating : (feast.average_rating +result.rating)/2)%>
+          <h1><%= star_rating((our_rating + result.rating)/2) %></h1>
           <p href= <%=result.url%>><%= image_tag result.image_url %></p>
           <h2><%= result.name %></h2>
           <p><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
@@ -56,17 +71,16 @@
             <li><%= review.excerpt %></li>
           <% end %>
 
-          <p> Our reviews: </p>
+          <% if feast.reviews.any?%>
+            <p> Our reviews: </p>
 
             <% feast.reviews.each do |review| %>
               <li><%= review.thoughts %> <%= star_rating(review.rating) %><%= %><%= link_to " delete", feast_review_path(feast,review), method: :delete  %></li>
             <% end %>
-
+          <% end %>
         <% end %>
-          
-          <h3>Feast Beast overall rating: </h3>
-          <h1><%= star_rating(feast.average_rating) %></h1>
-          
+        </div>
+        
    
         <% if !feast.twitter_id.empty? %>
 

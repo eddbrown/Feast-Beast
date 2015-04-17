@@ -34,7 +34,7 @@ html, body, #map-canvas {
 }
 
 .feast-list {
-  ::-webkit-scrollbar;
+  overflow: scroll;
   position: fixed;
   width: 30%;
   height: 100%;
@@ -71,6 +71,16 @@ background-color: rgba(128, 0, 0, 0.2);
   padding: 20px;
 
 }
+.admin {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: -20px;
+  padding: 20px;
+}
+
+.yelp {
+  margin: 20px -20px;
+  padding: 20px;
+}
 
 #overlay{
   height:100%;
@@ -89,6 +99,25 @@ background-color: rgba(128, 0, 0, 0.2);
   font-family: 'PT Sans', sans-serif;
 }
 
+.admin {
+  margin: 50px -20px -20px;
+  padding: 10px;
+}
+
+.small_button {
+  font-family: 'PT Sans', sans-serif;
+  display:inline-block; /* diplay inline but have dimensions */
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
+  color: white; /* text colour */
+  text-decoration: none; /* no underlining */
+  padding: 6px 10px;
+  text-align: center;
+  border-radius: 4px; /* rounded corners */
+  margin: 5px 5px;
+  text-shadow: 0 0 0px rgba(0,0,0, 0.4); /* for readability */
+}
+
 .button {
   font-family: 'PT Sans', sans-serif;
   display:inline-block; /* diplay inline but have dimensions */
@@ -102,6 +131,24 @@ background-color: rgba(128, 0, 0, 0.2);
   border-radius: 4px; /* rounded corners */
   margin: 5px 5px;
   text-shadow: 0 0 0px rgba(0,0,0, 0.4); /* for readability */
+}
+
+
+#logo_big {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    padding-bottom: 200px;
+    width: 60%;
+}
+
+#logo_small {
+  position: absolute;
+  z-index: 5;
+
 }
 
 .button:hover{
@@ -136,12 +183,13 @@ background-color: rgba(128, 0, 0, 0.2);
 }
 
 #feast_name, #feast_description, #feast_twitter_id, #feast_instagram_user, #feast_address, #feast_category, #feast_icon, #review_rating, #review_thoughts {
-  float: right; 
+  float: right;
 }
 
 #submit{
-  float: bottom; 
+  float: bottom;
 }
+
 
 .buttons {
   font-family: 'PT Sans', sans-serif;
@@ -156,7 +204,7 @@ background-color: rgba(128, 0, 0, 0.2);
   margin: 5px 5px;
   text-shadow: 0 0 0px rgba(0,0,0, 0.4); /* for readability */
 }
-}
+
 
 
 
