@@ -23,6 +23,47 @@ var dayStyle = [{"featureType":"landscape.man_made","elementType":"geometry","st
 
 var zombieStyle = [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#ffdfa6"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#b52127"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#c5531b"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#74001b"},{"lightness":-10}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#da3c3c"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#74001b"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#da3c3c"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"color":"#990c19"}]},{"elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"elementType":"labels.text.stroke","stylers":[{"color":"#74001b"},{"lightness":-8}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#6a0d10"},{"visibility":"on"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#ffdfa6"},{"weight":0.4}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"visibility":"off"}]}]
 
+var icons = {
+      cutlery_lunch: { icon: '/images/cutlery.png'},
+      cake_lunch: { icon: '/images/cake.png'},
+      cheese_lunch: { icon: '/images/cheese.png'},
+      chicken_lunch: { icon: '/images/chicken.png'},
+      chinese_lunch: { icon: '/images/chinese.png'},
+      drink_lunch: { icon: '/images/drink.png'},
+      fish_lunch: { icon: '/images/fish.png'},
+      burger_lunch: { icon: '/images/hamburger.png'},
+      indian_lunch: { icon: '/images/indian.png'},
+      mexican_lunch: { icon: '/images/mexican.png'},
+      noodles_lunch: { icon: '/images/noodles.png'},
+      pizza_lunch: { icon: '/images/pizza.png'},
+      pot_lunch: { icon: '/images/pot.png'},
+      steak_lunch: { icon: '/images/steak.png'},
+      cutlery_dinner: { icon: '/images/cutlery_w.png'},
+      cake_dinner: { icon: '/images/cake_w.png'},
+      cheese_dinner: { icon: '/images/cheese_w.png'},
+      chicken_dinner: { icon: '/images/chicken_w.png'},
+      chinese_dinner: { icon: '/images/chinese_w.png'},
+      drink_dinner: { icon: '/images/drink_w.png'},
+      fish_dinner: { icon: '/images/fish_w.png'},
+      burger_dinner: { icon: '/images/hamburger_w.png'},
+      indian_dinner: { icon: '/images/indian_w.png'},
+      mexican_dinner: { icon: '/images/mexican_w.png'},
+      noodles_dinner: { icon: '/images/noodles_w.png'},
+      pizza_dinner: { icon: '/images/pizza.png'},
+      pot_dinner: { icon: '/images/pot_w.png'},
+      steak_dinner: { icon: '/images/steak_w.png'},
+      zombie: { icon: '/images/zombie.png'},
+      airport: { icon: '/images/airplane.png'},
+      boat: { icon: '/images/boat.png'},
+      church: { icon: '/images/church.png'},
+      gun: { icon: '/images/gun.png'},
+      hospital: { icon: '/images/hospital.png'},
+      tools: { icon: '/images/tools.png'},
+      tower: { icon: '/images/tower.png'},
+      volcano: { icon: '/images/volcano.png'},
+      fire: { icon: '/images/fire.png'}
+    };
+
 
 var lastId = '0';
 
@@ -34,12 +75,13 @@ show_me = function(id){
 
 $(document).ready(function() {
   setTimeout(function(){
-      $("#overlay").fadeOut(0);
-  },0)
+      $("#overlay").fadeOut(5000);
+  },1000)
 });
 
 showNight = function(){
   map.setOptions({styles: nightStyle});
+  $("#logo_image").attr("src","/images/logo_w.png");
   showMarkers('Dinner');
   hideMarkers('Lunch');
   hideMarkers('Zombie');
@@ -51,6 +93,7 @@ showNight = function(){
 
 showDay = function(){
   map.setOptions({styles: dayStyle});
+  $("#logo_image").attr("src","/images/logo.png");
   showMarkers('Lunch');
   hideMarkers('Dinner');
   hideMarkers('Zombie');
@@ -62,6 +105,7 @@ showDay = function(){
 
 showZombie = function(){
   map.setOptions({styles: zombieStyle});
+  $("#logo_image").attr("src","/images/logo_w.png");
   showMarkers('Zombie');
   hideMarkers('Dinner');
   hideMarkers('Lunch');
@@ -86,4 +130,3 @@ hideMarkers = function(type){
     }
   }
 };
-
