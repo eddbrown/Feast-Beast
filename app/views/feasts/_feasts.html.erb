@@ -38,7 +38,7 @@
 
           <h3>Overall rating: </h3>
           <h1><%= star_rating(feast.average_rating) %></h1>
-          <p><%= feast.name %></p>
+          <h4><%= feast.name %></h4>
           <p><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
           <p><%= feast.description %></p>
           <% if feast.image? %>

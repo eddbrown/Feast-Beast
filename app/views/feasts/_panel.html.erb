@@ -6,14 +6,14 @@
       <a href='#' class='button' onclick="showZombie()">ZOMBIE</a>
       <div>
         <% if user_signed_in? %>
-          <button onclick="window.location.href='/feasts/new'">Add a feast</button>
+          <button class="buttons" onclick="window.location.href='/feasts/new'">Add a feast</button>
         <% end %>
 
         <% if user_signed_in? %>
-          <button><%= link_to "Sign out", destroy_user_session_path, method: :delete %></button>
+          <button class="buttons"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></button>
         <% else %>
-          <button><%= link_to "Sign in", new_user_session_path %></button>
-          <button><%= link_to "Sign up", new_user_registration_path %></button>
+          <button class="buttons"><%= link_to "Sign in", new_user_session_path %></button>
+          <button class="buttons"><%= link_to "Sign up", new_user_registration_path %></button>
         <% end %>
       </div>
 
