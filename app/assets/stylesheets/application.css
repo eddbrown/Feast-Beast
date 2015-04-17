@@ -22,15 +22,15 @@ html, body, #map-canvas {
 }
 #panel {
   position: absolute;
-  top: 5px;
-  left: 88%;
-  margin-left: -200px;
+  top: 0px;
+  left: 85%;
+  margin-left: -232px;
   z-index: 5;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 5px;
+  padding: 10px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 5px;
-  width: 550px;
+  width: 402px;
 }
 
 .feast-list {
@@ -112,10 +112,9 @@ background-color: rgba(128, 0, 0, 0.2);
 
 
 #editpageback{
-  background-image: url('background.png');
+  background-color: #00007F;
   height:100%;
   width:2000px;
-  -webkit-filter: blur(10px);
   z-index: -1;
 }
 
@@ -129,7 +128,7 @@ background-color: rgba(128, 0, 0, 0.2);
   border: 10px rgba(255, 255, 255, 0.5);
   text-align: left;
   width: 25%;
-  height: 30%;
+  height: 35%;
   padding: 20px;
   border-radius: 5px;
   font-family: 'PT Sans', sans-serif;
@@ -142,6 +141,21 @@ background-color: rgba(128, 0, 0, 0.2);
 
 #submit{
   float: bottom; 
+}
+
+.buttons {
+  font-family: 'PT Sans', sans-serif;
+  display:inline-block; /* diplay inline but have dimensions */
+  width: 80px;
+  background-color: black;
+  color: white; /* text colour */
+  text-decoration: none; /* no underlining */
+  padding: 6px 10px;
+  text-align: center;
+  border-radius: 4px; /* rounded corners */
+  margin: 5px 5px;
+  text-shadow: 0 0 0px rgba(0,0,0, 0.4); /* for readability */
+}
 }
 
 
