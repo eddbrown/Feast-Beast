@@ -1,18 +1,42 @@
+
+<div class="edfeast">
 <%= form_for @feast, html: {multipart: true} do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :twitter %>
-  <%= f.text_field :twitter_id %>
-  <%= f.label :instagram %>
-  <%= f.text_field :instagram_user %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :category %>
-  <%= f.select :category, options_for_select(%w[Lunch Dinner Zombie])%>
-  <%= f.label :icon %>
-  <%= f.select :icon, options_for_select(%w[food volcano caution fire mountain airport zombie]) %>
-  <%= f.file_field :image %>
-  <%= f.submit %>
-<% end %>
+  <div>
+    <label><%= f.label :name %></label>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :twitter %>
+    <%= f.text_field :twitter_id %>
+  </div>
+  <div>
+    <%= f.label :instagram %>
+    <%= f.text_field :instagram_user %>
+  </div>
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <div>
+    <%= f.label :category %>
+    <%= f.select :category, options_for_select(%w[Lunch Dinner Zombie])%>
+  </div>
+  <div>
+    <%= f.label :icon %>
+    <%= f.select :icon, options_for_select(%w[food volcano caution fire mountain airport zombie]) %>
+  </div>
+  <div>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>   
+</div>
+
+<img id="editpageback">
+</img>
