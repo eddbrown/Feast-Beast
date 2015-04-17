@@ -34,7 +34,7 @@ html, body, #map-canvas {
 }
 
 .feast-list {
-  ::-webkit-scrollbar;
+  --webkit-scrollbar;
   position: fixed;
   width: 30%;
   height: 100%;
