@@ -4,19 +4,6 @@
       <a href='#' class='button' onclick="showDay()">DAY</a>
       <a href='#' class='button' onclick="showNight()">NIGHT</a>
       <a href='#' class='button' onclick="showZombie()">ZOMBIE</a>
-      <div>
-        <% if user_signed_in? %>
-          <button class="buttons" onclick="window.location.href='/feasts/new'">Add a feast</button>
-        <% end %>
-
-        <% if user_signed_in? %>
-          <button class="buttons"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></button>
-        <% else %>
-          <button class="buttons"><%= link_to "Sign in", new_user_session_path %></button>
-          <button class="buttons"><%= link_to "Sign up", new_user_registration_path %></button>
-        <% end %>
-      </div>
-
     </div>
     <div id="map-canvas"></div>
   </body>

@@ -3,6 +3,18 @@
 
 <div id="logo_small">
   <img id="logo_image" src="/images/logo_w.png" style="width: 30%;height: 30%;">
+  <br>
+   <% if user_signed_in? %>
+          <button class="buttons" onclick="window.location.href='/feasts/new'">Add a feast</button>
+        <% end %>
+
+        <% if user_signed_in? %>
+          <button class="buttons"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></button>
+        <% else %>
+          <button class="buttons"><%= link_to "Sign in", new_user_session_path %></button>
+          <button class="buttons"><%= link_to "Sign up", new_user_registration_path %></button>
+        <% end %>
+
 </div>
 
 <%= render "feasts" %>
