@@ -130,7 +130,7 @@ background-color: rgba(128, 0, 0, 0.2);
 
 
 #editpageback{
-  background-image: url('assets/images/background.png');
+  background-image: url('background.png');
   height:100%;
   width:2000px;
   -webkit-filter: blur(10px);
