@@ -5,19 +5,25 @@
         <div class = "admin">
           <% if user_signed_in? %>
           <% if feast.user_id == @user.id %>
-            <p><%= link_to "Edit #{feast.name}", edit_feast_path(feast) %></p>
-            <p><%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %></p>
-
-            <% if feast.yelp_id.nil? %> 
-              No yelp content
-            <% else %>
-              Yelp content linked
-            <% end %>
-            <%= link_to "Add yelp details", yelp_path(feast)%>
+            <a class = "small_button" href = <%= edit_feast_path(feast)%> > Edit </a>
+            <a class = "small_button" href = <%= yelp_path(feast)%> > Add/Edit Yelp </a>
+            
             <% if !feast.instagram_user.nil? %> 
-              <%= link_to "Confirm instagram account", instagram_path(feast)%>
+              <a class = "small_button" href= <%=instagram_path(feast)%> > Confirm Instagram </a>
             <% end %>
-
+            <small><%= link_to "Delete", feast_path(feast), method: :delete %>
+            <% if feast.yelp_id.nil? %> 
+              <a>Yelp status: not linked / </a>
+            <% else %>
+              <a>Yelp status: linked / </a>
+            <% end %>
+            
+            <% if feast.instagram_id.nil? %>
+            <a>Instagram status: not linked </a>
+            <% else %>
+              <a>Instagram status: linked</a>
+            <% end %> </small>
+            
           <% end %>
         </div>  
         <% else %>
