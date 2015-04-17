@@ -12,7 +12,7 @@
   <%= f.label :category %>
   <%= f.select :category, options_for_select(%w[Lunch Dinner Zombie])%>
   <%= f.label :icon %>
-  <%= f.select :icon, options_for_select(%w[food volcano caution fire mountain airport zombie]) %>
+  <%= f.select :icon, options_for_select(%w[cutlery_lunch cutlery_dinner cake_lunch cake_dinner cheese_lunch cheese_dinner chicken_lunch chicken_dinner chinese_lunch chinese_dinner drink_lunch drink_dinner fish_lunch fish_dinner burger_lunch burger_dinner indian_lunch indian_dinner mexican_lunch mexican_dinner noodles_lunch noodles_dinner pizza_lunch pizza_dinner pot_lunch pot_dinner steak_lunch steak_dinner zombie airport boat church gun hospital tools tower volcano fire]) %>
   <%= f.file_field :image %>
   <%= f.submit %>
 <% end %>
