@@ -62,3 +62,11 @@ gem 'geocoder'
 gem 'paperclip'
 gem 'gmaps4rails'
 gem 'rails_12factor'
+
+
+#
+
+
+
+
+
