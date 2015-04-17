@@ -119,8 +119,12 @@ li,a,p,h1,h2,h3 {
   font-size: 20px;
 }
 
-#feast_name, #feast_description, #feast_twitter_id, #feast_instagram_user, #feast_address, #feast_category, #feast_icon {
+#feast_name, #feast_description, #feast_twitter_id, #feast_instagram_user, #feast_address, #feast_category, #feast_icon, #review_rating, #review_thoughts {
   float: right; 
+}
+
+#submit{
+  float: bottom; 
 }
 
 
