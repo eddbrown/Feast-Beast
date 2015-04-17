@@ -23,12 +23,14 @@ html, body, #map-canvas {
 #panel {
   position: absolute;
   top: 5px;
-  left: 50%;
+  left: 88%;
   margin-left: -200px;
   z-index: 5;
-  background-color: black;
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 5px;
-  border: 1px solid #999;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+  width: 550px;
 }
 
 .feast-list {
@@ -101,3 +103,46 @@ background-color: rgba(128, 0, 0, 0.2);
   margin: 5px 5px;
   text-shadow: 0 0 0px rgba(0,0,0, 0.4); /* for readability */
 }
+
+.button:hover{
+  background-color: white;
+  border: 3px solid white;
+  color: black;
+}
+
+
+#editpageback{
+  background-image: url('background.png');
+  height:100%;
+  width:2000px;
+  -webkit-filter: blur(10px);
+  z-index: -1;
+}
+
+.edfeast{
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -200px;
+  z-index: 5;
+  border: 10px rgba(255, 255, 255, 0.5);
+  text-align: left;
+  width: 25%;
+  height: 30%;
+  padding: 20px;
+  border-radius: 5px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 20px;
+}
+
+#feast_name, #feast_description, #feast_twitter_id, #feast_instagram_user, #feast_address, #feast_category, #feast_icon, #review_rating, #review_thoughts {
+  float: right; 
+}
+
+#submit{
+  float: bottom; 
+}
+
+
+
