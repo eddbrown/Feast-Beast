@@ -87,7 +87,7 @@ background-color: rgba(128, 0, 0, 0.2);
   font-family: 'PT Sans', sans-serif;
 }
 
-a.button {
+.button {
   font-family: 'PT Sans', sans-serif;
   display:inline-block; /* diplay inline but have dimensions */
   width: 80px;
