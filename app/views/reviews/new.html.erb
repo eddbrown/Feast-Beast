@@ -1,7 +1,18 @@
-<%= form_for [@feast, @review] do |f| %>
-  <%= f.label :thoughts %>
-  <%= f.text_area :thoughts %>
-  <%= f.label :rating %>
-  <%= f.select :rating, (1..5) %>
-  <%= f.submit 'Leave Review' %>
-<% end %>
+<div class="edfeast">
+  <%= form_for [@feast, @review] do |f| %>
+    <div>
+      <%= f.label :thoughts %>
+      <%= f.text_field :thoughts %>
+    </div>
+    <div>
+      <%= f.label :rating %>
+      <%= f.select :rating, (1..5) %>
+    </div>
+    <div id="submit">
+      <%= f.submit 'Leave Review' %>
+    </div>
+  <% end %>
+</div>
+
+<img id="editpageback">
+</img>

@@ -1,18 +1,42 @@
+<div class="edfeast">
 <%= form_for @feast, html: {multipart: true} do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.label :twitter %>
-  <%= f.text_field :twitter_id %>
-  <%= f.label :instagram %>
-  <%= f.text_field :instagram_user %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :category %>
-  <%= f.select :category, options_for_select(%w[Lunch Dinner Zombie])%>
-  <%= f.label :icon %>
-  <%= f.select :icon, options_for_select(%w[cutlery_lunch cutlery_dinner cake_lunch cake_dinner cheese_lunch cheese_dinner chicken_lunch chicken_dinner chinese_lunch chinese_dinner drink_lunch drink_dinner fish_lunch fish_dinner burger_lunch burger_dinner indian_lunch indian_dinner mexican_lunch mexican_dinner noodles_lunch noodles_dinner pizza_lunch pizza_dinner pot_lunch pot_dinner steak_lunch steak_dinner zombie airport boat church gun hospital tools tower volcano fire]) %>
-  <%= f.file_field :image %>
-  <%= f.submit %>
-<% end %>
+  <div>
+    <label><%= f.label :name %></label>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div>
+    <%= f.label :twitter %>
+    <%= f.text_field :twitter_id %>
+  </div>
+  <div>
+    <%= f.label :instagram %>
+    <%= f.text_field :instagram_user %>
+  </div>
+  <div>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+  <div>
+    <%= f.label :category %>
+    <%= f.select :category, options_for_select(%w[Lunch Dinner Zombie])%>
+  </div>
+  <div>
+    <%= f.label :icon %>
+    <%= f.select :icon, options_for_select(%w[cutlery_lunch cutlery_dinner cake_lunch cake_dinner cheese_lunch cheese_dinner chicken_lunch chicken_dinner chinese_lunch chinese_dinner drink_lunch drink_dinner fish_lunch fish_dinner burger_lunch burger_dinner indian_lunch indian_dinner mexican_lunch mexican_dinner noodles_lunch noodles_dinner pizza_lunch pizza_dinner pot_lunch pot_dinner steak_lunch steak_dinner zombie airport boat church gun hospital tools tower volcano fire]) %>
+  </div>
+  <div>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>   
+</div>
+
+<img id="editpageback">
+</img>
+
