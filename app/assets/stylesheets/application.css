@@ -84,3 +84,20 @@ li,a,p,h1,h2,h3 {
   margin: 5px 5px;
   text-shadow: 0 0 0px rgba(0,0,0, 0.4); /* for readability */
 }
+
+#logo_big {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    padding-bottom: 200px;
+    width: 60%;
+}
+
+#logo_small {
+  position: absolute;
+  z-index: 5;
+
+}
