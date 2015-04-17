@@ -104,6 +104,24 @@ background-color: rgba(128, 0, 0, 0.2);
   text-shadow: 0 0 0px rgba(0,0,0, 0.4); /* for readability */
 }
 
+
+#logo_big {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    padding-bottom: 200px;
+    width: 60%;
+}
+
+#logo_small {
+  position: absolute;
+  z-index: 5;
+
+}
+
 .button:hover{
   background-color: white;
   border: 3px solid white;
@@ -137,12 +155,9 @@ background-color: rgba(128, 0, 0, 0.2);
 }
 
 #feast_name, #feast_description, #feast_twitter_id, #feast_instagram_user, #feast_address, #feast_category, #feast_icon, #review_rating, #review_thoughts {
-  float: right; 
+  float: right;
 }
 
 #submit{
-  float: bottom; 
+  float: bottom;
 }
-
-
-
