@@ -32,8 +32,9 @@ html, body, #map-canvas {
 }
 
 .feast-list {
+  ::-webkit-scrollbar;
   position: fixed;
-  width: 25%;
+  width: 30%;
   height: 100%;
   top: 2;
   right: 0;
@@ -51,6 +52,22 @@ li,a,p,h1,h2,h3 {
 
 .hidden {
   display: none;
+}
+
+.twitter {
+
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: -20px;
+  padding: 20px;
+}
+
+.instagram {
+
+background-color: rgba(128, 0, 0, 0.2);
+  margin: 20px -20px;
+  padding: 20px;
+
 }
 
 #overlay{

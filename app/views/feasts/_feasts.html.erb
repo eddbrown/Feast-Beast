@@ -1,50 +1,112 @@
 <div>
   <% if @feasts.any? %>
     <% @feasts.each do |feast| %>
-      <div id='<%= feast.id %>' class='hidden feast-list'>
-        <h1><%= link_to feast.name, feast_path(feast) %></h1>
-        <h3><%= feast.description %></h3>
-        <% if !feast.yelp_id.nil? %>
-          <%= image_tag Yelp.client.business(feast.yelp_id).image_url %>
-        <% elsif feast.image? %>
-          <%= image_tag feast.image.url(:thumb) %>
-        <% end %>
-        <% if feast.reviews.any? %>
-          <h3>Average rating: <%= star_rating(feast.average_rating) %></h3>
-        <% else %>
-          <h3>Average rating: No ratings yet </h3>
-    <% end %>
-      <% if user_signed_in? %>
-        <% if feast.user_id == @user.id %>
-          <p><%= link_to "Edit #{feast.name}", edit_feast_path(feast) %></p>
-          <p><%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %></p>
+      <div id='<%= feast.id %>' class='hidden feast-list' style="overflow-y: scroll; height:100%;">
+        
+          <% if user_signed_in? %>
+          <% if feast.user_id == @user.id %>
+            <p><%= link_to "Edit #{feast.name}", edit_feast_path(feast) %></p>
+            <p><%= link_to "Delete #{feast.name}", feast_path(feast), method: :delete %></p>
 
-          <% if feast.yelp_id.nil? %> 
-            No yelp content
-          <% else %>
-            Yelp content linked
-          <% end %>
-          <%= link_to "Add yelp details", yelp_path(feast)%>
-          <% if !feast.instagram_user.nil? %> 
-            <%= link_to "Confirm instagram account", instagram_path(feast)%>
-          <% end %>
-
-        <% end %>
-        <p><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
-      <% else %>
-        (log in to leave a review)
-      <% end %>
-        <% if feast.reviews.any? %>
-          <ul>
-            <% feast.reviews.each do |review| %>
-              <li><%= review.thoughts %> <%= star_rating(review.rating) %><%= %><%= link_to " ☓", feast_review_path(feast,review), method: :delete  %></li>
+            <% if feast.yelp_id.nil? %> 
+              No yelp content
+            <% else %>
+              Yelp content linked
             <% end %>
-          </ul>
-        <% elsif feast.yelp_id.nil? %>
-          <p>No Reviews.</p>
-        <% else %>=
-          <%= Yelp.client.business(feast.yelp_id).snippet_text %>
+            <%= link_to "Add yelp details", yelp_path(feast)%>
+            <% if !feast.instagram_user.nil? %> 
+              <%= link_to "Confirm instagram account", instagram_path(feast)%>
+            <% end %>
+
+          <% end %>
+          
+        <% else %>
+          (log in to leave a review)
         <% end %>
+
+        <% if feast.yelp_id.nil? %>
+
+          <p><%= feast.name %></p>
+          <p><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
+          <p><%= feast.description %></p>
+          <% if feast.image? %>
+            <p><%= image_tag feast.image.url(:thumb) %></p>
+          <% end %>
+          <p><%= feast.address %></p>
+
+        <% else %>
+
+          <% result = Yelp.client.business(feast.yelp_id) %>
+          <p href= <%=result.url%>><%= image_tag result.image_url %></p>
+          <h2><%= result.name %></h2>
+          <p><%= link_to "Review #{feast.name}", new_feast_review_path(feast) %></p>
+
+          <%= image_tag 'http://pictures.dealer.com/b/baldhilldodgechryslercllc/0968/0a34ddab33889ba78139ce84a7944999x.jpg', height: '50', width: '110'%>
+          <p><%= image_tag result.rating_img_url %> Yelp rating: <%= result.rating %> </p>
+          <a>(from <%= result.review_count %> reviews)</a>
+          
+          <p><%= result.snippet_text%></p>
+          <p><%= result.location.display_address[1] %>
+          <%= result.location.display_address[2] %></p>
+
+          <p> Yelp Reviews: </p>
+
+          <% result.reviews.each do |review| %>
+            <%= image_tag review.rating_image_small_url %>
+            <li><%= review.excerpt %></li>
+          <% end %>
+
+          <p> Our reviews: </p>
+
+            <% feast.reviews.each do |review| %>
+              <li><%= review.thoughts %> <%= star_rating(review.rating) %><%= %><%= link_to " delete", feast_review_path(feast,review), method: :delete  %></li>
+            <% end %>
+
+        <% end %>
+          
+          <h3>Feast Beast overall rating: </h3>
+          <h1><%= star_rating(feast.average_rating) %></h1>
+          
+   
+        <% if !feast.twitter_id.empty? %>
+
+          <div class = "twitter">
+          <%= image_tag 'http://iimcb.genesilico.pl/MetaLocGramN/images/base/twitter-logo.png', height: '40', width: '175' %> 
+          <% feast_tweet = feast.feast_tweets(feast.twitter_id)%>
+          <% client_tweet = feast.client_tweets(feast.twitter_id)%>
+
+
+          <h3 class = "twitter_title"> What we're saying:</h3>
+            <% 5.times do |x| %>
+              <li><%= feast_tweet[x] %></li>
+            <% end %>
+            <br>
+
+          <h3 class = "twitter_title"> What our customers are saying:</h3> 
+            <% 5.times do |x| %>
+              <li><%= client_tweet[x] %></li>
+            <% end %>
+          </div>
+        <% end %>
+
+        <% if !feast.instagram_id.nil? %>
+        <% instagram_result = Instagram.user_recent_media(feast.instagram_id, {:count => 10}) %>
+        <div class = "instagram">
+        
+        <%= image_tag 'http://www.motoonline.com.au/wp-content/themes/motoonline-2015/images/logo-instagram.png', height: '45', width: '190' %> 
+          
+          <% instagram_result.each do |post| %>
+          <br>
+            <a href= <%= post.images.standard_resolution.url %>> <%= image_tag post.images.thumbnail.url %></a>
+          <br>
+            <a><%= post.caption.text %></a>
+          <br>
+          <% end %>
+        </div>
+
+        <% end %>
+              
+        
       </div>
     <% end %>
   <% else %>
