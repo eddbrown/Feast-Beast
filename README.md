@@ -8,11 +8,13 @@ The purpose of this project was to practice a lot of the techniques/languages/fr
 Having said this, it looks good and works (disclaimer)!
 
 ## Technologies Used
+- Ruby version 2.2.0
 - Ruby on Rails
 - OmniAuth
 - Geocode/Google Maps
 - Twitter, Yelp, Facebook APIs
 - JQuery
+- Testing with rspec
 
 ## Features
 
